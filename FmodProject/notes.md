@@ -40,6 +40,6 @@ Crane posé contre un rocher dans une ambiance de terrain vague.
 
 - [] hover sur un bouton de mousse
 - [] clic gauche pour sélectionner
-- [] clic droit affhicher infos
+- [] clic droit affhicher infos ?
 - [] icones qui apparaissent à côté de la mousse pour montrer ce qu'elle aime ou pas
 - [] Menu de pause hover et clic, entrée / sortie du menu

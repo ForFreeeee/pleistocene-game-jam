@@ -79,7 +79,7 @@ public class MossShooter : MonoBehaviour
         GameObject childMoss = Instantiate(m_moss, hitpoint, Quaternion.identity);
         childMoss.transform.localScale = m_mossScale;
         //Debug.Log(childMoss.transform.up);
-        childMoss.transform.Translate(hit.normal * Random.Range(-0.03f, 0.03f));
+        childMoss.transform.Translate(hit.normal * Random.Range(-0.03f, 0.0f));
         childMoss.transform.rotation = Quaternion.FromToRotation(childMoss.transform.up, hit.normal);
         childMoss.transform.Rotate(new Vector3(0, Random.Range(0, 360), 0));
         //childMoss.transform.rotation.SetLookRotation(hit.normal);

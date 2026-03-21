@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
 
 public class MossButtonUIManager : MonoBehaviour
 {
@@ -15,18 +16,20 @@ public class MossButtonUIManager : MonoBehaviour
 
 
 
-    internal void Init(List<int> listMoss, Action<int> changeSelectedMoss)
+
+
+    internal void Init(List<MossData> listMoss, Action<int> changeSelectedMoss)
     {
-        for (int i = 0; i < listMoss.Count; i++)
+        foreach (var moss in listMoss)
         {
-            mossButtonPrefab.Init(i, changeSelectedMoss);
-            Instantiate(mossButtonPrefab, contentTransform);
+            var button = Instantiate(mossButtonPrefab, contentTransform);
+            button.Init(moss.id, changeSelectedMoss);
         }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void ChangeSelectedMoss(int newMoss)
+    public void ChangeSelectedMoss(MossData newMoss)
     {
-        explainCanvas.SetState(newMoss);
+        explainCanvas.UpdateMossData(newMoss);
     }
 }

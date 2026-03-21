@@ -286,19 +286,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2029808681005659533, guid: 89b0464cf7f839b44be49cae20c0e031, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2029808681005659533, guid: 89b0464cf7f839b44be49cae20c0e031, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2029808681005659533, guid: 89b0464cf7f839b44be49cae20c0e031, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2029808681005659533, guid: 89b0464cf7f839b44be49cae20c0e031, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2029808681005659533, guid: 89b0464cf7f839b44be49cae20c0e031, type: 3}
       propertyPath: m_SizeDelta.x
@@ -338,11 +338,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2029808681005659533, guid: 89b0464cf7f839b44be49cae20c0e031, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 398.75
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2029808681005659533, guid: 89b0464cf7f839b44be49cae20c0e031, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 239.125
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 2029808681005659533, guid: 89b0464cf7f839b44be49cae20c0e031, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -552,6 +552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 581287228}
+  - component: {fileID: 581287229}
   m_Layer: 5
   m_Name: Moss button list
   m_TagString: Untagged
@@ -579,6 +580,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &581287229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581287227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &661269238
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +635,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f2b17fb28e9124e91e9b29024ff605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MossManageur
-  listMoss: 01000000020000000300000004000000
+  listMoss:
+  - {fileID: 11400000, guid: 43c2cdc435752c14a8f739ea48722245, type: 2}
+  - {fileID: 11400000, guid: 488d1c6139e221447abd126ba316b8b2, type: 2}
+  - {fileID: 11400000, guid: 26fb8a3a006c2dd4fb6efdf106cf4f51, type: 2}
+  - {fileID: 11400000, guid: 03f316828a56ec84f8fbfb05e6a728b2, type: 2}
+  - {fileID: 11400000, guid: 646f8933544f901449d558cb2c33f884, type: 2}
+  - {fileID: 11400000, guid: fc6d662cc842690409d37ceb3b137101, type: 2}
   mossButtonUIManager: {fileID: 1486079630}
 --- !u!4 &661269240
 Transform:
@@ -897,6 +930,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1281965744 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7696476525350547889, guid: ac3698ba2003ad245b8858bda82e3b06, type: 3}
+  m_PrefabInstance: {fileID: 7517980717546669336}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1382485221
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,6 +1206,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498139350}
   m_CullTransparentMesh: 1
+--- !u!1 &1538788733 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4995281400023515981, guid: ac3698ba2003ad245b8858bda82e3b06, type: 3}
+  m_PrefabInstance: {fileID: 7517980717546669336}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1557842837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,6 +1247,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1619873082 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4721400481427261545, guid: ac3698ba2003ad245b8858bda82e3b06, type: 3}
+  m_PrefabInstance: {fileID: 7517980717546669336}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1832285743
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1808,6 +1868,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Explain Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 9035279526864691959, guid: ac3698ba2003ad245b8858bda82e3b06, type: 3}
+      propertyPath: content
+      value: 
+      objectReference: {fileID: 1538788733}
+    - target: {fileID: 9035279526864691959, guid: ac3698ba2003ad245b8858bda82e3b06, type: 3}
+      propertyPath: NameText
+      value: 
+      objectReference: {fileID: 1281965744}
+    - target: {fileID: 9035279526864691959, guid: ac3698ba2003ad245b8858bda82e3b06, type: 3}
+      propertyPath: DetailedText
+      value: 
+      objectReference: {fileID: 1619873082}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

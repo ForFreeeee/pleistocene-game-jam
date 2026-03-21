@@ -119,11 +119,33 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &48933377 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 724475529220190833, guid: 97e803660770cb3418a4cf7253f5ef00, type: 3}
+  m_PrefabInstance: {fileID: 5811095097899916584}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!224 &157101295 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5597800490953377714, guid: 2ec1293c32365d74e8f667636dc04368, type: 3}
   m_PrefabInstance: {fileID: 8882332900201809787}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &646202786 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2398011227353877417, guid: 97e803660770cb3418a4cf7253f5ef00, type: 3}
+  m_PrefabInstance: {fileID: 5811095097899916584}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &696517569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -175,7 +197,7 @@ PrefabInstance:
     - target: {fileID: 5524592208145225883, guid: 85396cc7fcb3fef47807db4a4107088e, type: 3}
       propertyPath: mossButtonUIManager
       value: 
-      objectReference: {fileID: 1486079630}
+      objectReference: {fileID: 1096400762}
     - target: {fileID: 6527862834321334584, guid: 85396cc7fcb3fef47807db4a4107088e, type: 3}
       propertyPath: m_Name
       value: GameManageur
@@ -446,6 +468,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4095384942740422381, guid: 630095870da76d34cac79de1d1b05c31, type: 3}
   m_PrefabInstance: {fileID: 6994949720422951645}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1264013947 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2706795107486761101, guid: 97e803660770cb3418a4cf7253f5ef00, type: 3}
+  m_PrefabInstance: {fileID: 5811095097899916584}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1306955581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -646,17 +673,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2174050508868331099, guid: 97e803660770cb3418a4cf7253f5ef00, type: 3}
   m_PrefabInstance: {fileID: 5811095097899916584}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1486079630 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6772858088226798786, guid: 97e803660770cb3418a4cf7253f5ef00, type: 3}
-  m_PrefabInstance: {fileID: 5811095097899916584}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486079628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0da921c4f0e51e478fc59f028f91aeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MossButtonUIManager
 --- !u!1 &1847539279
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,6 +781,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2135120616064688439, guid: 97e803660770cb3418a4cf7253f5ef00, type: 3}
+      propertyPath: content
+      value: 
+      objectReference: {fileID: 1264013947}
+    - target: {fileID: 2135120616064688439, guid: 97e803660770cb3418a4cf7253f5ef00, type: 3}
+      propertyPath: NameText
+      value: 
+      objectReference: {fileID: 48933377}
+    - target: {fileID: 2135120616064688439, guid: 97e803660770cb3418a4cf7253f5ef00, type: 3}
+      propertyPath: DetailedText
+      value: 
+      objectReference: {fileID: 646202786}
     - target: {fileID: 2174050508868331099, guid: 97e803660770cb3418a4cf7253f5ef00, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -861,7 +889,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6772858088226798786, guid: 97e803660770cb3418a4cf7253f5ef00, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

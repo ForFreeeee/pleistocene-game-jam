@@ -3,19 +3,34 @@
 // Create a RenderTexture with enableRandomWrite flag and set it
 // with cs.SetTexture
 RWTexture2D<float4> Result;
-Texture2D<float4> Mask;
 float2 HitUV;
+uint2 HitXY;
+uint2 Res;
 float1 Step;
 
 float2 GetUV(uint3 id)
 {
-    return (id.xy + 0.5) * Step - 1.0;
+    return (id.xy + 0.5f) * Step - 1.0f;
 }
 
 [numthreads(8,8,1)]
 void CSMain (uint3 id : SV_DispatchThreadID)
 {
-    float2 IDUV = GetUV(id);
-    if ((IDUV.x - HitUV.x) * (IDUV.x - HitUV.x) - (IDUV.y * HitUV.y) * (IDUV.y * HitUV.y) < (Step * Step))
-        Result[id.xy] = float4(1, 1, 1, 1);
+    if (id.x == HitXY.x && id.y == HitXY.y)
+    for (int i = -20; i < 20; i++)
+    {
+        for (int j = -20; j < 20; j++)
+        {
+                float idx = (HitXY.x + i)%Res.x;
+                if (idx < 0) idx = Res.x - idx;
+                float idy = (HitXY.y + j) % Res.y;
+                if (idy < 0) idy = Res.y - idy;
+                float2 nid = float2(idx, idy);
+                Result[nid] = float4(1, 1, 1, 1);
+        }
+
+    }
+    /*if (((HitXY.x - id.x) ^ 2) + ((HitXY.y - id.y) ^ 2) < 30)
+        Result[id.xy] = float4(1, 1, 1, 1);*/
+  
 }

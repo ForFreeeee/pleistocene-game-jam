@@ -52,7 +52,8 @@ public class MossCoverable : MonoBehaviour
         Debug.Log(textureCoord);
         m_mossRemover.SetFloats(Shader.PropertyToID("HitUV"), textureCoord.x, textureCoord.y);
         m_mossRemover.SetFloat(Shader.PropertyToID("Step"), 2f/m_objectTexture.width);
-        m_mossRemover.SetTexture(m_mossRemover.FindKernel("CSMain"), Shader.PropertyToID("Mask"), m_maskMoss);
+        m_mossRemover.SetInts(Shader.PropertyToID("Res"), m_objectTexture.width, m_objectTexture.height);
+        m_mossRemover.SetInts(Shader.PropertyToID("HitXY"), Mathf.FloorToInt(textureCoord.x * m_objectTexture.width), Mathf.FloorToInt(textureCoord.y * m_objectTexture.height));
         m_mossRemover.SetTexture(m_mossRemover.FindKernel("CSMain"), Shader.PropertyToID("Result"), m_renderTexture);
         m_mossRemover.Dispatch(m_mossRemover.FindKernel("CSMain"), Mathf.CeilToInt(m_maskMoss.width / 8f), Mathf.CeilToInt(m_maskMoss.height / 8f), 1);
         //m_mossMaskLayerRef.SetTexture("_MaskTexture", m_maskMoss);

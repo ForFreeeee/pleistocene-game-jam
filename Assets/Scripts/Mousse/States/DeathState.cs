@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace GameDev.Moss.States
@@ -7,6 +8,7 @@ namespace GameDev.Moss.States
     public class DeathState : IState
     {
         private MossController moss;
+        float decayTimer;
 
         // pass in any parameters you need in the constructors
         public DeathState(MossController moss)
@@ -18,12 +20,20 @@ namespace GameDev.Moss.States
         {
             // code that runs when we first enter the state
             // Debug.Log("Entering Idle State");
+            decayTimer=moss.MossData.DecayTime;
         }
 
         // per-frame logic, include condition to transition to a new state
         public void GraphicsUpdate()
         {
-
+            float t=1-(decayTimer/moss.MossData.DecayTime);
+            decayTimer-=Time.deltaTime;
+            moss.transform.localScale=Vector3.Lerp(moss.transform.localScale, Vector3.zero, t);
+            if (decayTimer <= 0)
+            {
+                GameObject.Destroy(moss.gameObject);
+                return;
+            }
         }
 
         public void PhysicsUpdate()

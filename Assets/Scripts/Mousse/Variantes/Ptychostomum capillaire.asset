@@ -18,7 +18,7 @@ MonoBehaviour:
   LikesWater: 0
   LikesSun: 0
   LikesRock: 0
-  LikesGround: 0
+  LikesGround: 1
   NameKey: PtychostomumCapillaire
   DetailedKey: PtychostomumCapillaireDetailed
   sprite: {fileID: 0}

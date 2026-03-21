@@ -40,4 +40,9 @@ public class MossManageur : MonoBehaviour
     {
         mossButtonUIManager.UpdateLikeSunImageProperties(mossData);
     }
+
+    public void LauchEndGame()
+    {
+        mossButtonUIManager.ShowEndGameScreen();
+    }
 }

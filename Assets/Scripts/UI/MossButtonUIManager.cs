@@ -35,6 +35,9 @@ public class MossButtonUIManager : MonoBehaviour
 
     Dictionary<int,MossButton> buttonList;
 
+    [SerializeField]
+    GameObject endGameScreen;
+
     internal void Init(List<MossData> listMoss, Action<int> changeSelectedMoss, Action<int> changeHoverMoss)
     {
         buttonList = new Dictionary<int,MossButton>();
@@ -80,6 +83,11 @@ public class MossButtonUIManager : MonoBehaviour
         {
             buttonToChange?.UpdateLikeSunImage(notLikeSunSprite);
         }
+    }
+
+    public void ShowEndGameScreen()
+    {
+        endGameScreen.SetActive(true);
     }
 
 }

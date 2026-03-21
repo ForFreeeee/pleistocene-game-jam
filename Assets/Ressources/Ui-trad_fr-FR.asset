@@ -23,11 +23,87 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 186334580736
-    m_Localized: Appuyez sur n'importe quelle touche pour commencer
+    m_Localized: "Cliquez n'importe o\xF9 pour commencer"
     m_Metadata:
       m_Items: []
   - m_Id: 9679223132160
-    m_Localized: ok
+    m_Localized: Continuer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14045950775296
+    m_Localized: "Syntrichia ruralis est une mousse terricole (qui aime la terre)
+      et h\xE9liophile (qui aime le soleil)."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14087826706432
+    m_Localized: 'On la trouve souvent dans les graviers et les sols un peu secs.
+      Elle est touffue et uniforme. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14127878115328
+    m_Localized: Ptychostomum capillare est une mousse terricole (qui aime la terre)
+      et sciaphile (qui aime l'ombre).
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14197188988928
+    m_Localized: "On la trouve souvent sur les sols mais aussi sur les murs. Elle
+      se reconna\xEEt \xE0 ses longues capsules vertes et pendantes. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22161676636160
+    m_Localized: "Grimmia pulvinata est une mousse saxicole (qui aime les roches)
+      et h\xE9liophile (qui aime le soleil)."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22836829556736
+    m_Localized: 'On la trouve souvent en haut des murs sous la forme de petits coussins.
+      Ses poils blancs lui donnent une couleur grise. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22840650567680
+    m_Localized: "Tortula muralis est une mousse saxicole (qui aime la roche) et
+      h\xE9liophile (qui aime le soleil)."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22842663833600
+    m_Localized: "On la trouve souvent dans les murs. Elle poss\xE8de de longues
+      tiges fines appel\xE9es soies. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22844442218496
+    m_Localized: "Amblystegium serpens est une mousse hygrophile (qui aime l'eau)
+      et h\xE9liophile (qui aime le soleil)."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22846359015424
+    m_Localized: "Tr\xE8s fine, cette mousse se pla\xEEt dans l'eau et est utilis\xE9e
+      dans la d\xE9coration d'aquariums."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23036847525888
+    m_Localized: Hypnum cupressiforme est une mousse hygrophile (qui aime l'eau)
+      et sciaphile (qui aime l'ombre).
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23038760128512
+    m_Localized: "Extr\xEAmement commune, cette mousse se pla\xEEt un peu partout
+      et fait de larges et \xE9pais tapis. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23040563679232
+    m_Localized: Quitter le jeu ?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23161535795200
+    m_Localized: Oui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23163616169984
+    m_Localized: Non
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23560879673344
+    m_Localized: French
     m_Metadata:
       m_Items: []
   references:

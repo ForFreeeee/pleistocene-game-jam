@@ -93,7 +93,7 @@ MonoBehaviour:
   Path: FmodProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639097265309810731
+  lastModified: 639097268651708901
   FileSizes:
   - Name: Desktop
     Value: 2054784
@@ -169,7 +169,7 @@ MonoBehaviour:
   Path: FmodProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639097265309810731
+  lastModified: 639097268651731330
   FileSizes:
   - Name: Desktop
     Value: 1070
@@ -228,7 +228,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -1189947932045695159}
   cacheVersion: 131858
-  cacheTime: 639097265309810731
+  cacheTime: 639097268651731330
   SerializableEventsDict:
   - key: event:/MossGrowth
     index: 0

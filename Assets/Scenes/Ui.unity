@@ -889,8 +889,7 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6772858088226798786, guid: 97e803660770cb3418a4cf7253f5ef00, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1044,18 +1043,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1096400761}
     m_Modifications:
-    - target: {fileID: 604473113649289005, guid: 2ec1293c32365d74e8f667636dc04368, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 3525463677787462932, guid: 15aa8486222461f44a1078e0a2173e37, type: 2}
-    - target: {fileID: 604473113649289005, guid: 2ec1293c32365d74e8f667636dc04368, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2514384749613321151, guid: 2ec1293c32365d74e8f667636dc04368, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -9169362572845225108, guid: 90331052857033d4ebafe0b479b077de, type: 2}
     - target: {fileID: 3409283459075955511, guid: 2ec1293c32365d74e8f667636dc04368, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 

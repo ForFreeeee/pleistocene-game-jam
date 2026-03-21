@@ -24,7 +24,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 1280294195889525339}
   cacheVersion: 131858
-  cacheTime: 639097197557116054
+  cacheTime: 639097200293113480
   SerializableEventsDict:
   - key: event:/MainTheme
     index: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   Path: FmodProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639097197557116054
+  lastModified: 639097200293113480
   FileSizes:
   - Name: Desktop
     Value: 920
@@ -92,7 +92,7 @@ MonoBehaviour:
   Path: FmodProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639097197557114689
+  lastModified: 639097200293098371
   FileSizes:
   - Name: Desktop
     Value: 1734880

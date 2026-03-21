@@ -9,10 +9,6 @@ public class MossController : MonoBehaviour
     [SerializeField]
     private bool willDie;
 
-    public CapsuleCollider MossCollider;
-    public MeshRenderer MossMeshRenderer;
-
-
     private void Awake()
     {
         MossStateMachine = new MossStateMachine(this);

@@ -42,7 +42,7 @@ public class MossStateMachine
 
     public void PhysicsUpdate()
     {
-        if (CurrentState != null)
+        if (CurrentState != null && CurrentState != matureState)
         {
             CurrentState.PhysicsUpdate();
         }

@@ -1,32 +1,34 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MossManageur : MonoBehaviour
 {
     int selectedMoss;
-    //TMP
     [SerializeReference]
-    List<int> listMoss = new List<int>() { 1,2,3,4};
+    List<MossData> listMoss;
 
     [SerializeField]
     MossButtonUIManager mossButtonUIManager;
 
     void Start()
     {
-        // todo get list Moss
 
         selectedMoss = -1;
 
         mossButtonUIManager.Init(listMoss, ChangeSelectedMoss);
 
-        
+        ChangeSelectedMoss(selectedMoss);
+
+
     }
 
     void ChangeSelectedMoss(int newMoss)
     {
         selectedMoss = newMoss;
-        mossButtonUIManager.ChangeSelectedMoss(newMoss);
+        mossButtonUIManager.ChangeSelectedMoss(listMoss.Where(m => m.id== newMoss).FirstOrDefault());
     }
     
 }

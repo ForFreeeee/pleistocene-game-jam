@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{b3de5b89-6cb1-4554-a2d3-9642fafd5b37}">
+		<property name="assetPath">
+			<value>Moss/Pops/704170__magicjoshua__popping-sound-made-with-mouth.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.58772916666666664</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8c721cbb-d424-4e4e-af8b-cb1b0edc7f74}</destination>
+		</relationship>
+	</object>
+</objects>

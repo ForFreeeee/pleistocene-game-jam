@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{c5bbe7da-16ac-4651-8fe5-4270d04e1c52}">
+		<property name="name">
+			<value>CanGrow</value>
+		</property>
+		<relationship name="folder">
+			<destination>{55718ce0-0c70-432b-8af0-7c5cbb0f7e8d}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{ce19d722-66a0-4645-b911-bebfdb9765f5}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{ce19d722-66a0-4645-b911-bebfdb9765f5}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="isHeld">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>1</value>
+		</property>
+	</object>
+</objects>

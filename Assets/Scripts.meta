@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: ed695e2befb41e54ea67827e0c81ac13
+=======
+guid: 01fbf757cb83a954d91cfc60e44b0d61
+>>>>>>> a4dede9 (Diorama Version 01)
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -10,10 +10,13 @@ public class MossShooter : MonoBehaviour
     GameObject m_moss;
 
     [SerializeField]
-    float m_radius;
+    float m_mossRadius;
 
     [SerializeField]
-    int m_density;
+    int m_mossDensity;
+
+    [SerializeField]
+    Vector3 m_mossScale;
 
     List<GameObject> m_childMoss;
 
@@ -21,6 +24,11 @@ public class MossShooter : MonoBehaviour
     Camera m_camera;
 
     PlayerInput playerInput;
+
+    [SerializeField]
+    float m_setDelayValue;
+
+    float m_currentDelay;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,33 +40,44 @@ public class MossShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        m_currentDelay -= Time.deltaTime;
         
     }
 
     public void OnShoot(InputAction.CallbackContext context)
     {
         Debug.Log("Clicked detected");
-        // context.action
+        Vector2 val = Mouse.current.position.ReadValue();
+        Debug.Log(val);
 
-        Ray r = m_camera.ScreenPointToRay(m_camera.ScreenToViewportPoint(Mouse.current.position.ReadValue()));
-        RaycastHit hit;
-        GameObject hit_object;
-        Debug.DrawRay(r.origin, r.direction * 100, Color.red, 3.0f);
-        if (Physics.Raycast(r, out hit))
+        if (m_currentDelay < 0)
         {
-            Debug.Log("Got a hit");
-            hit_object = hit.collider.gameObject;
-            for (int i = 0; i < m_density; i++) 
-                GenerateMoss(hit, hit_object);  
+            Vector3 point = Camera.main.ScreenToWorldPoint(new Vector3(val.x, val.y, Camera.main.nearClipPlane));
+            Debug.Log(point);
+            Ray r = new Ray(Camera.main.transform.position, point - Camera.main.transform.position);
+            RaycastHit hit;
+            GameObject hit_object;
+            Debug.DrawRay(r.origin, r.direction * 100, Color.red, 3.0f);
+            if (Physics.Raycast(r, out hit))
+            {
+                Debug.Log("Got a hit");
+                hit_object = hit.collider.gameObject;
+                for (int i = 0; i < m_mossDensity; i++)
+                    GenerateMoss(hit, hit_object);
+            }
+            m_currentDelay = m_setDelayValue;
         }
     }
 
     void GenerateMoss(RaycastHit hit, GameObject hit_object) {
-            Vector3 hitpoint = hit.transform.position;
-            Vector3 normal = hit.normal;
-            GameObject childMoss = Instantiate(m_moss, hitpoint, hit.transform.rotation);
-            m_childMoss.Add(childMoss);
-            
+        Vector3 hitpoint = hit.point;
+        Vector3 normal = hit.normal;
+        Debug.Log(hit.normal);
+        GameObject childMoss = Instantiate(m_moss, hitpoint, Quaternion.identity);
+        childMoss.transform.localScale = m_mossScale;
+        //Debug.Log(childMoss.transform.up);
+        childMoss.transform.rotation = Quaternion.FromToRotation(childMoss.transform.up, hit.normal); 
+        //childMoss.transform.rotation.SetLookRotation(hit.normal);
+        m_childMoss.Add(childMoss);    
     }
 }

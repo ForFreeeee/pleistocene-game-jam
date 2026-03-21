@@ -19,12 +19,12 @@ public class MossManageur : MonoBehaviour
 
         mossButtonUIManager.Init(mossList, ChangeSelectedMoss, ChangeHoverMoss);
 
-        ChangeSelectedMoss(selectedMossId);
+        ChangeSelectedMoss();
     }
 
-    void ChangeSelectedMoss(int newMoss)
+    void ChangeSelectedMoss()
     {
-        selectedMossId = newMoss;
+        selectedMossId = mossButtonUIManager.GetSelectedMooss();
     }
     void ChangeHoverMoss(int newMoss)
     {
@@ -45,4 +45,5 @@ public class MossManageur : MonoBehaviour
     {
         mossButtonUIManager.ShowEndGameScreen();
     }
+
 }

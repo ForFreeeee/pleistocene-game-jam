@@ -1,15 +1,16 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class MossButton : MonoBehaviour
 {
-    int id;
+    public int id;
     [SerializeField]
     Image image;
     [SerializeField]
-    public Button button;
+    public Toggle toggle;
 
     [SerializeField]
     Image imageLikeSun;
@@ -17,18 +18,19 @@ public class MossButton : MonoBehaviour
     [SerializeField]
     Image imagePlaceToPlace;
 
-    public void Init(int id, Sprite sprite, Action<int> changeSelectedMoss, Action<int> changeHoverMoss)
+    public void Init(int id, Sprite sprite, Action changeSelectedMoss, Action<int> changeHoverMoss)
     {
         this.id = id;
         this.image.sprite = sprite;
 
         //OnClick event
-        this.button.onClick.AddListener(() => changeSelectedMoss(id));
+        this.toggle.onValueChanged.AddListener(delegate {
+            changeSelectedMoss();});
 
         //Hover event
-        EventTrigger trigger = button.GetComponentInParent<EventTrigger>();
+        EventTrigger trigger = toggle.GetComponentInParent<EventTrigger>();
 
-        if (trigger == null) trigger = button.gameObject.AddComponent<EventTrigger>();
+        if (trigger == null) trigger = toggle.gameObject.AddComponent<EventTrigger>();
 
         EventTrigger.Entry entry = new EventTrigger.Entry();
 

@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Localization;
+using UnityEngine.UI;
 
 public class MossButtonUIManager : MonoBehaviour
 {
     [SerializeField]
-    Transform contentTransform;
+    ToggleGroup toggleGroup;
 
     [SerializeField]
     ExplainCanvas explainCanvas;
@@ -38,12 +39,12 @@ public class MossButtonUIManager : MonoBehaviour
     [SerializeField]
     GameObject endGameScreen;
 
-    internal void Init(List<MossData> listMoss, Action<int> changeSelectedMoss, Action<int> changeHoverMoss)
+    internal void Init(List<MossData> listMoss, Action changeSelectedMoss, Action<int> changeHoverMoss)
     {
         buttonList = new Dictionary<int,MossButton>();
         foreach (var moss in listMoss)
         {
-            var button = Instantiate(mossButtonPrefab, contentTransform);
+            var button = Instantiate(mossButtonPrefab, toggleGroup.transform);
             button.Init(moss.id,moss.sprite, changeSelectedMoss, changeHoverMoss);
             button.UpdateLikeSunImage(DefaultSprite);
             button.UpdatePlaceToPlace(DefaultSprite);
@@ -88,6 +89,13 @@ public class MossButtonUIManager : MonoBehaviour
     public void ShowEndGameScreen()
     {
         endGameScreen.SetActive(true);
+    }
+
+    public int GetSelectedMooss()
+    {
+        var toggle =  toggleGroup.ActiveToggles()?.FirstOrDefault();
+        var mossButton = toggle?.gameObject.GetComponent<MossButton>();
+        return mossButton?.id?? -1;
     }
 
 }

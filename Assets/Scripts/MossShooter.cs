@@ -60,6 +60,9 @@ public class MossShooter : MonoBehaviour
             Debug.DrawRay(r.origin, r.direction * 100, Color.red, 3.0f);
             if (Physics.Raycast(r, out hit))
             {
+                MossCoverable moss_coverable = hit.collider.gameObject.GetComponent<MossCoverable>();
+                if (moss_coverable == null)
+                    return;
                 Debug.Log("Got a hit");
                 hit_object = hit.collider.gameObject;
                 for (int i = 0; i < m_mossDensity; i++)
@@ -70,14 +73,21 @@ public class MossShooter : MonoBehaviour
     }
 
     void GenerateMoss(RaycastHit hit, GameObject hit_object) {
-        Vector3 hitpoint = hit.point;
+       Vector3 hitpoint = hit.point;
         Vector3 normal = hit.normal;
         Debug.Log(hit.normal);
         GameObject childMoss = Instantiate(m_moss, hitpoint, Quaternion.identity);
         childMoss.transform.localScale = m_mossScale;
         //Debug.Log(childMoss.transform.up);
-        childMoss.transform.rotation = Quaternion.FromToRotation(childMoss.transform.up, hit.normal); 
+        childMoss.transform.Translate(hit.normal * Random.Range(-0.03f, 0.03f));
+        childMoss.transform.rotation = Quaternion.FromToRotation(childMoss.transform.up, hit.normal);
+        childMoss.transform.Rotate(new Vector3(0, Random.Range(0, 360), 0));
         //childMoss.transform.rotation.SetLookRotation(hit.normal);
-        m_childMoss.Add(childMoss);    
+        m_childMoss.Add(childMoss);
+
+        // Second part removing layer to make moss appear
+        MossCoverable moss_coverable = hit.collider.gameObject.GetComponent<MossCoverable>();
+            if (moss_coverable != null)    
+                moss_coverable.AddMoss(hit.point, hit.textureCoord);
     }
 }

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 5ffcadb286167370791c2bb0a322dbf2
+=======
+guid: 2023bdfe6ad98304bafe6ce718299894
+>>>>>>> fc69c74 (MossShooter and MossCoverable)
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -383,8 +383,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
-<<<<<<< HEAD
-=======
 --- !u!1 &624672734
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,7 +534,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
->>>>>>> fc69c74 (MossShooter and MossCoverable)
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0

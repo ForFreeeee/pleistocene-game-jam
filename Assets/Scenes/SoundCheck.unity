@@ -385,11 +385,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1262689941
-      Data2: 1249957737
-      Data3: 727247240
-      Data4: -2073096973
-    Path: event:/MainTheme
+      Data1: 1026856553
+      Data2: 1253959566
+      Data3: 800310204
+      Data4: -895895920
+    Path: event:/Ambience
   Event: 
   EventPlayTrigger: 1
   EventStopTrigger: 2

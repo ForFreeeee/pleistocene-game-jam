@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7974095954165231986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MossGrowth/CanGrow
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: CanGrow
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 147300948
+    data2: 3415881179
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-1299850626277101310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MossGrowth/Ground
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Ground
+  StudioPath: 
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 2671068281
+    data2: 2852371429
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - None
+  - Earth
+  - Wood
+  - Water
+  - Rock
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18,18 +71,21 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: 2124423936639952512}
   - {fileID: 8211158626250833015}
+  - {fileID: 5160153596890503300}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4053712287655594827}
   StringsBanks:
   - {fileID: 1280294195889525339}
   cacheVersion: 131858
-  cacheTime: 639097197557116054
+  cacheTime: 639097228534083020
   SerializableEventsDict:
   - key: event:/MainTheme
     index: 0
   - key: event:/Ambience
     index: 1
+  - key: event:/MossGrowth
+    index: 2
 --- !u!114 &1280294195889525339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,10 +101,10 @@ MonoBehaviour:
   Path: FmodProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639097197557116054
+  lastModified: 639097228534083020
   FileSizes:
   - Name: Desktop
-    Value: 920
+    Value: 972
   Exists: 1
 --- !u!114 &2124423936639952512
 MonoBehaviour:
@@ -92,11 +148,40 @@ MonoBehaviour:
   Path: FmodProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639097197557114689
+  lastModified: 639097228533972979
   FileSizes:
   - Name: Desktop
-    Value: 1734880
+    Value: 2051168
   Exists: 1
+--- !u!114 &5160153596890503300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MossGrowth
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/MossGrowth
+  Guid:
+    Data1: -1191494082
+    Data2: 1231230234
+    Data3: -1313154151
+    Data4: 1305114013
+  Banks:
+  - {fileID: 4053712287655594827}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -7974095954165231986}
+  - {fileID: -1299850626277101310}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16392
 --- !u!114 &8211158626250833015
 MonoBehaviour:
   m_ObjectHideFlags: 0

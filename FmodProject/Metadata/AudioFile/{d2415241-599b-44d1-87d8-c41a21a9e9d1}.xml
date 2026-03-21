@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{d2415241-599b-44d1-87d8-c41a21a9e9d1}">
+		<property name="assetPath">
+			<value>Moss/Pops/bubble_d3.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.14399999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8c721cbb-d424-4e4e-af8b-cb1b0edc7f74}</destination>
+		</relationship>
+	</object>
+</objects>

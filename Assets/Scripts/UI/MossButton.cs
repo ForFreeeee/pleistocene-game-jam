@@ -11,10 +11,19 @@ public class MossButton : MonoBehaviour
     [SerializeField]
     public Button button;
 
-    public void Init(int id, Sprite sprite, Action<int> changeSelectedMoss)
+    [SerializeField]
+    Image imageLikeSun;
+
+    [SerializeField]
+    Image imagePlaceToPlace;
+
+    public void Init(int id, Sprite sprite, Action<int> changeSelectedMoss, Action<int> changeHoverMoss)
     {
         this.id = id;
         this.image.sprite = sprite;
+
+        //OnClick event
+        this.button.onClick.AddListener(() => changeSelectedMoss(id));
 
         //Hover event
         EventTrigger trigger = button.GetComponentInParent<EventTrigger>();
@@ -25,8 +34,18 @@ public class MossButton : MonoBehaviour
 
         entry.eventID = EventTriggerType.PointerEnter;
 
-        entry.callback.AddListener((eventData) => { changeSelectedMoss(id); });
+        entry.callback.AddListener((eventData) => { changeHoverMoss(id); });
 
         trigger.triggers.Add(entry);
+    }
+
+    public void UpdateLikeSunImage(Sprite newSprite)
+    {
+        imageLikeSun.sprite = newSprite;
+    }
+
+    public void UpdatePlaceToPlace(Sprite newSprite)
+    {
+        imagePlaceToPlace.sprite = newSprite;
     }
 }

@@ -17,7 +17,7 @@ public class MossManageur : MonoBehaviour
     {
         selectedMossId = -1;
 
-        mossButtonUIManager.Init(mossList, ChangeSelectedMoss);
+        mossButtonUIManager.Init(mossList, ChangeSelectedMoss, ChangeHoverMoss);
 
         ChangeSelectedMoss(selectedMossId);
     }
@@ -25,6 +25,19 @@ public class MossManageur : MonoBehaviour
     void ChangeSelectedMoss(int newMoss)
     {
         selectedMossId = newMoss;
-        mossButtonUIManager.ChangeSelectedMoss(mossList.Where(m => m.id== newMoss).FirstOrDefault());
+    }
+    void ChangeHoverMoss(int newMoss)
+    {
+        mossButtonUIManager.ChangeHoverMoss(mossList.Where(m => m.id == newMoss).FirstOrDefault());
+    }
+
+    public void UpdatePlaceToPlaceProperties(MossData mossData)
+    {
+        mossButtonUIManager.UpdatePlaceToPlaceProperties(mossData);
+    }
+
+    public void UpdateLikeSunImageProperties(MossData mossData)
+    {
+        mossButtonUIManager.UpdateLikeSunImageProperties(mossData);
     }
 }

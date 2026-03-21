@@ -16,9 +16,9 @@ MonoBehaviour:
   GrowthTime: 0
   DecayTime: 0
   LikesWater: 0
-  LikesSun: 0
+  LikesSun: 1
   LikesRock: 0
-  LikesGround: 0
+  LikesGround: 1
   NameKey: SyntrichiaRuralis
   DetailedKey: SyntrichiaRuralisDetailed
   sprite: {fileID: 0}

@@ -16,8 +16,8 @@ MonoBehaviour:
   GrowthTime: 0
   DecayTime: 0
   LikesWater: 0
-  LikesSun: 0
-  LikesRock: 0
+  LikesSun: 1
+  LikesRock: 1
   LikesGround: 0
   NameKey: GrimmiaPulvinata
   DetailedKey: GrimmiaPulvinataDetailed

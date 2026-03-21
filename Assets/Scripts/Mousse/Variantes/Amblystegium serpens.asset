@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Amblystegium serpens
   m_EditorClassIdentifier: Assembly-CSharp::MossData
   id: 0
-  GrowthTime: 0
-  DecayTime: 0
-  LikesWater: 0
-  LikesSun: 0
+  GrowthTime: 1
+  DecayTime: 1
+  LikesWater: 1
+  LikesSun: 1
   LikesRock: 0
   LikesGround: 0
   NameKey: AmblystegiumSerpens

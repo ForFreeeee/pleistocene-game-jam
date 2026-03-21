@@ -1,12 +1,18 @@
 using UnityEngine;
+using UnityEngine.Localization;
 
 [CreateAssetMenu(fileName = "MossData", menuName = "Scriptable Objects/MossData")]
 public class MossData : ScriptableObject
 {
+    public int id;
    public float GrowthTime;
    public float DecayTime;
    public bool LikesWater;
    public bool LikesSun;
    public bool LikesRock;
-   public bool LikesGround; 
+   public bool LikesGround;
+
+    public string NameKey;
+    public string DetailedKey;
+    public Sprite sprite;
 }

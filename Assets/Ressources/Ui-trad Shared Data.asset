@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Ui-trad Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Ui-trad
+  m_TableCollectionNameGuidString: 1ecb82d894e13f9488f56ed2d6617a22
+  m_Entries:
+  - m_Id: 120366567424
+    m_Key: LanAbbrev
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186334580736
+    m_Key: StartingScreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9679223132160
+    m_Key: ContinueButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14045950775296
+    m_Key: SyntrichiaRuralis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14087826706432
+    m_Key: SyntrichiaRuralisDetailed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14127878115328
+    m_Key: PtychostomumCapillaire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14197188988928
+    m_Key: PtychostomumCapillaireDetailed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22161676636160
+    m_Key: GrimmiaPulvinata
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22836829556736
+    m_Key: GrimmiaPulvinataDetailed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22840650567680
+    m_Key: TortulaMuralis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22842663833600
+    m_Key: TortulaMuralisDetailed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22844442218496
+    m_Key: AmblystegiumSerpens
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22846359015424
+    m_Key: AmblystegiumSerpensDetailed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23036847525888
+    m_Key: HypnumCupressiforme
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23038760128512
+    m_Key: HypnumCupressiformeDetailed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23040563679232
+    m_Key: ClosingGameMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23161535795200
+    m_Key: ClosingGameYes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23163616169984
+    m_Key: ClosingGameNo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23560879673344
+    m_Key: ChooseLangage
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 8422381602438119472
+  references:
+    version: 2
+    RefIds:
+    - rid: 8422381602438119472
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1774098247845

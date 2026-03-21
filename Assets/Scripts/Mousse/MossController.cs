@@ -3,27 +3,44 @@ using UnityEngine;
 
 public class MossController : MonoBehaviour
 {
-    private MossStateMachine mossStateMachine;
-    [SerializeField] private MossData mossData;
+    public MossStateMachine MossStateMachine;
+    public MossData MossData;
+
+    [SerializeField]
+    private bool willDie;
+
+    public CapsuleCollider MossCollider;
+    public MeshRenderer MossMeshRenderer;
+
 
     private void Awake()
     {
-        mossStateMachine = new MossStateMachine(this);
+        MossStateMachine = new MossStateMachine(this);
     }
 
     private void Start()
     {
-        mossStateMachine.Initialize(mossStateMachine.idleState);
+        MossStateMachine.Initialize(MossStateMachine.idleState);
     }
 
     private void Update()
     {
-        mossStateMachine.GraphicsUpdate();
+        MossStateMachine.GraphicsUpdate();
     }
 
     private void FixedUpdate()
     {
-        mossStateMachine.PhysicsUpdate();
+        MossStateMachine.PhysicsUpdate();
+    }
+    
+    public void AnticipateDeath()
+    {
+        willDie=true;
+    }
+
+    public bool mustDie()
+    {
+        return willDie;
     }
 
 }

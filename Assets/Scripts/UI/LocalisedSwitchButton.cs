@@ -7,7 +7,7 @@ using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 
-public class LocaliedButton: MonoBehaviour
+public class LocalisedSwitchButton: MonoBehaviour
 {
     public Button button;
     List<Locale> localizedLangues;

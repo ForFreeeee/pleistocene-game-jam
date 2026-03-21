@@ -10,11 +10,10 @@ public class MossButton : MonoBehaviour
     [SerializeField]
     public Button button;
 
-    public void Init(int id, Action<int> changeSelectedMoss)
+    public void Init(int id, Sprite sprite, Action<int> changeSelectedMoss)
     {
         this.id = id;
-        //TODO
-        //this.image = image;
+        this.image.sprite = sprite;
         //TODO over
         this.button.onClick.AddListener(() => changeSelectedMoss(id));
     }

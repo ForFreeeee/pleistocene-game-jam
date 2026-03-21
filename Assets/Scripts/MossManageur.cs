@@ -6,29 +6,25 @@ using UnityEngine;
 
 public class MossManageur : MonoBehaviour
 {
-    int selectedMoss;
+    int selectedMossId;
     [SerializeReference]
-    List<MossData> listMoss;
+    List<MossData> mossList;
 
     [SerializeField]
     MossButtonUIManager mossButtonUIManager;
 
     void Start()
     {
+        selectedMossId = -1;
 
-        selectedMoss = -1;
+        mossButtonUIManager.Init(mossList, ChangeSelectedMoss);
 
-        mossButtonUIManager.Init(listMoss, ChangeSelectedMoss);
-
-        ChangeSelectedMoss(selectedMoss);
-
-
+        ChangeSelectedMoss(selectedMossId);
     }
 
     void ChangeSelectedMoss(int newMoss)
     {
-        selectedMoss = newMoss;
-        mossButtonUIManager.ChangeSelectedMoss(listMoss.Where(m => m.id== newMoss).FirstOrDefault());
+        selectedMossId = newMoss;
+        mossButtonUIManager.ChangeSelectedMoss(mossList.Where(m => m.id== newMoss).FirstOrDefault());
     }
-    
 }

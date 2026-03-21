@@ -14,16 +14,12 @@ public class MossButtonUIManager : MonoBehaviour
     [SerializeField]
     MossButton mossButtonPrefab;
 
-
-
-
-
     internal void Init(List<MossData> listMoss, Action<int> changeSelectedMoss)
     {
         foreach (var moss in listMoss)
         {
             var button = Instantiate(mossButtonPrefab, contentTransform);
-            button.Init(moss.id, changeSelectedMoss);
+            button.Init(moss.id,moss.sprite, changeSelectedMoss);
         }
     }
 

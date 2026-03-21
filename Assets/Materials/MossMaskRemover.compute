@@ -16,7 +16,7 @@ float2 GetUV(uint3 id)
 [numthreads(8,8,1)]
 void CSMain (uint3 id : SV_DispatchThreadID)
 {
-    if (id.x == HitXY.x && id.y == HitXY.y)
+    /*if (id.x == HitXY.x && id.y == HitXY.y)
     for (int i = -20; i < 20; i++)
     {
         for (int j = -20; j < 20; j++)
@@ -29,8 +29,8 @@ void CSMain (uint3 id : SV_DispatchThreadID)
                 Result[nid] = float4(1, 1, 1, 1);
         }
 
-    }
-    /*if (((HitXY.x - id.x) ^ 2) + ((HitXY.y - id.y) ^ 2) < 30)
-        Result[id.xy] = float4(1, 1, 1, 1);*/
+    }*/
+    if (((HitXY.x - id.x) * (HitXY.x - id.x)) + ((HitXY.y - id.y) * (HitXY.y - id.y)) < 600)
+        Result[id.xy] = float4(1, 1, 1, 1);
   
 }

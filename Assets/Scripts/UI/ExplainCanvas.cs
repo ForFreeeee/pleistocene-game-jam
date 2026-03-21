@@ -17,15 +17,17 @@ public class ExplainCanvas : MonoBehaviour
     LocalizedString localizedName;
     LocalizedString localizedDetailed;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    const string tableRefName = "Ui-trad";
+
     void Start()
     {
-        //localizedName.StringChanged += ValueNameChanged;
-        //localizedDetailed.StringChanged += ValueDetailedChanged;
+        localizedName = new LocalizedString();
+        localizedName.TableReference = tableRefName;
+        localizedName.StringChanged += ValueNameChanged;
 
-        //TODO localized
-        //localizedName = new LocalizedString();
-        //localizedName.TableReference = "UI-trad";
+        localizedDetailed = new LocalizedString();
+        localizedDetailed.TableReference = tableRefName;
+        localizedDetailed.StringChanged += ValueDetailedChanged;
     }
 
 
@@ -38,8 +40,13 @@ public class ExplainCanvas : MonoBehaviour
         else
         {
             Show(true);
-            NameText.text = mossData.NameKey;
-            DetailedText.text = mossData.DetailedKey;
+            localizedName.TableEntryReference = mossData.NameKey;
+            localizedName.RefreshString();
+            NameText.text = localizedName.GetLocalizedString();
+
+            localizedDetailed.TableEntryReference = mossData.DetailedKey;
+            localizedDetailed.RefreshString();
+            DetailedText.text = localizedName.GetLocalizedString();
         }
     }
 
@@ -50,14 +57,11 @@ public class ExplainCanvas : MonoBehaviour
 
     }
 
-
-
     void ValueNameChanged(string value)
     {
         NameText.text = value;
     }
 
-    
     void ValueDetailedChanged(string value)
     {
         DetailedText.text = value;

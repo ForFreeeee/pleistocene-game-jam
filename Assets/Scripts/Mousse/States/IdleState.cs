@@ -25,8 +25,7 @@ namespace GameDev.Moss.States
         public void GraphicsUpdate()
         {
 
-            if ((moss.MossMeshRenderer.lightmapIndex==-1 && moss.MossData.LikesSun)||
-                (moss.MossMeshRenderer.lightmapIndex!=-1 && !moss.MossData.LikesSun)|| moss.mustDie())
+            if (moss.mustDie())
             {
                 moss.MossStateMachine.TransitionTo(moss.MossStateMachine.deathState);
                 return;

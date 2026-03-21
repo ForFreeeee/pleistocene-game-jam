@@ -187,7 +187,7 @@
 	</object>
 	<object class="SingleSound" id="{5712f670-e242-439f-992b-983c2a736b9d}">
 		<property name="startOffset">
-			<value>71.5</value>
+			<value>65.5</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{5ecf9943-7f9c-4529-9897-7e982a5ea60c}</destination>
@@ -263,7 +263,7 @@
 			<value>startOffset</value>
 		</property>
 		<property name="amount">
-			<value>39.5</value>
+			<value>23</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{f0b611c1-c27f-4981-9f54-924c60d5d603}">

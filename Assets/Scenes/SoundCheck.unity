@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 1973566878}
   - component: {fileID: 1973566881}
   - component: {fileID: 1973566880}
+  - component: {fileID: 1973566882}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -385,11 +386,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1026856553
-      Data2: 1253959566
-      Data3: 800310204
-      Data4: -895895920
-    Path: event:/Ambience
+      Data1: -1191494082
+      Data2: 1231230234
+      Data3: -1313154151
+      Data4: 1305114013
+    Path: event:/MossGrowth
   Event: 
   EventPlayTrigger: 1
   EventStopTrigger: 2
@@ -430,6 +431,23 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &1973566882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973566877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioParameterTrigger
+  CollisionTag: 
+  Emitters:
+  - Target: {fileID: 1973566880}
+    Params: []
+  TriggerEvent: 17
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

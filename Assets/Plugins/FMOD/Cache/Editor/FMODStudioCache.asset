@@ -53,7 +53,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 120
+  Length: 62
 --- !u!114 &-7974095954165231986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,10 +93,10 @@ MonoBehaviour:
   Path: FmodProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639097689996978383
+  lastModified: 639097767616984387
   FileSizes:
   - Name: Desktop
-    Value: 2054784
+    Value: 2125568
   Exists: 1
 --- !u!114 &-4886237039555156934
 MonoBehaviour:
@@ -169,7 +169,7 @@ MonoBehaviour:
   Path: FmodProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639097689997051677
+  lastModified: 639097766619729216
   FileSizes:
   - Name: Desktop
     Value: 1070
@@ -228,11 +228,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -1189947932045695159}
   cacheVersion: 131858
-<<<<<<< HEAD
-  cacheTime: 639097197557116054
-=======
-  cacheTime: 639097689997051677
->>>>>>> d720dbfa92a28ca5e90ca25e433b920e376b4689
+  cacheTime: 639097767616984387
   SerializableEventsDict:
   - key: event:/MossGrowth
     index: 0
@@ -288,11 +284,7 @@ MonoBehaviour:
   Path: FmodProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-<<<<<<< HEAD
-  lastModified: 639097197557116054
-=======
   lastModified: 639097262086744297
->>>>>>> d720dbfa92a28ca5e90ca25e433b920e376b4689
   FileSizes:
   - Name: Desktop
     Value: 1070
@@ -363,11 +355,7 @@ MonoBehaviour:
   Path: FmodProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-<<<<<<< HEAD
-  lastModified: 639097197557114689
-=======
   lastModified: 639097262086704691
->>>>>>> d720dbfa92a28ca5e90ca25e433b920e376b4689
   FileSizes:
   - Name: Desktop
     Value: 2054784
@@ -510,4 +498,4 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 87
+  Length: 101

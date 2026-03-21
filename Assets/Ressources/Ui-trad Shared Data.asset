@@ -23,6 +23,26 @@ MonoBehaviour:
     m_Key: StartingScreen
     m_Metadata:
       m_Items: []
+  - m_Id: 9679223132160
+    m_Key: ContinueButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14045950775296
+    m_Key: SyntrichiaRuralis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14087826706432
+    m_Key: SyntrichiaRuralisDetailed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14127878115328
+    m_Key: PtychostomumCapillaire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14197188988928
+    m_Key: PtychostomumCapillaireDetailed
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

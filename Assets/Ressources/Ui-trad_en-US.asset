@@ -26,6 +26,10 @@ MonoBehaviour:
     m_Localized: Click any key to start
     m_Metadata:
       m_Items: []
+  - m_Id: 9679223132160
+    m_Localized: ok
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

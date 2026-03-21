@@ -17,14 +17,33 @@ public class MossManageur : MonoBehaviour
     {
         selectedMossId = -1;
 
-        mossButtonUIManager.Init(mossList, ChangeSelectedMoss);
+        mossButtonUIManager.Init(mossList, ChangeSelectedMoss, ChangeHoverMoss);
 
-        ChangeSelectedMoss(selectedMossId);
+        ChangeSelectedMoss();
     }
 
-    void ChangeSelectedMoss(int newMoss)
+    void ChangeSelectedMoss()
     {
-        selectedMossId = newMoss;
-        mossButtonUIManager.ChangeSelectedMoss(mossList.Where(m => m.id== newMoss).FirstOrDefault());
+        selectedMossId = mossButtonUIManager.GetSelectedMooss();
     }
+    void ChangeHoverMoss(int newMoss)
+    {
+        mossButtonUIManager.ChangeHoverMoss(mossList.Where(m => m.id == newMoss).FirstOrDefault());
+    }
+
+    public void UpdatePlaceToPlaceProperties(MossData mossData)
+    {
+        mossButtonUIManager.UpdatePlaceToPlaceProperties(mossData);
+    }
+
+    public void UpdateLikeSunImageProperties(MossData mossData)
+    {
+        mossButtonUIManager.UpdateLikeSunImageProperties(mossData);
+    }
+
+    public void LauchEndGame()
+    {
+        mossButtonUIManager.ShowEndGameScreen();
+    }
+
 }

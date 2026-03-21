@@ -1,32 +1,53 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class MossButton : MonoBehaviour
 {
-    int id;
+    public int id;
     [SerializeField]
     Image image;
     [SerializeField]
-    public Button button;
+    public Toggle toggle;
 
-    public void Init(int id, Sprite sprite, Action<int> changeSelectedMoss)
+    [SerializeField]
+    Image imageLikeSun;
+
+    [SerializeField]
+    Image imagePlaceToPlace;
+
+    public void Init(int id, Sprite sprite, Action changeSelectedMoss, Action<int> changeHoverMoss)
     {
         this.id = id;
         this.image.sprite = sprite;
 
-        //Hover event
-        EventTrigger trigger = button.GetComponentInParent<EventTrigger>();
+        //OnClick event
+        this.toggle.onValueChanged.AddListener(delegate {
+            changeSelectedMoss();});
 
-        if (trigger == null) trigger = button.gameObject.AddComponent<EventTrigger>();
+        //Hover event
+        EventTrigger trigger = toggle.GetComponentInParent<EventTrigger>();
+
+        if (trigger == null) trigger = toggle.gameObject.AddComponent<EventTrigger>();
 
         EventTrigger.Entry entry = new EventTrigger.Entry();
 
         entry.eventID = EventTriggerType.PointerEnter;
 
-        entry.callback.AddListener((eventData) => { changeSelectedMoss(id); });
+        entry.callback.AddListener((eventData) => { changeHoverMoss(id); });
 
         trigger.triggers.Add(entry);
+    }
+
+    public void UpdateLikeSunImage(Sprite newSprite)
+    {
+        imageLikeSun.sprite = newSprite;
+    }
+
+    public void UpdatePlaceToPlace(Sprite newSprite)
+    {
+        imagePlaceToPlace.sprite = newSprite;
     }
 }

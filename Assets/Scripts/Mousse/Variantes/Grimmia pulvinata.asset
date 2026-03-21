@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b4cbf2f1640c94ea34e3b8d3d4c7fc, type: 3}
   m_Name: Grimmia pulvinata
   m_EditorClassIdentifier: Assembly-CSharp::MossData
-  id: 0
+  id: 1
   GrowthTime: 0
   DecayTime: 0
   LikesWater: 0

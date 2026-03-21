@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MossData
   GrowthTime: 0
   DecayTime: 0
-  LikesWater: 0
+  LikesWater: 1
   LikesSun: 0
   LikesRock: 0
   LikesGround: 0

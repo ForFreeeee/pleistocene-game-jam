@@ -19,6 +19,6 @@ MonoBehaviour:
   LikesSun: 0
   LikesRock: 0
   LikesGround: 0
-  NameKey: Nom
-  DetailedKey: Detaile
+  NameKey: AmblystegiumSerpens
+  DetailedKey: AmblystegiumSerpensDetailed
   sprite: {fileID: 0}

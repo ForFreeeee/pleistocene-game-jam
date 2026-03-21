@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b4cbf2f1640c94ea34e3b8d3d4c7fc, type: 3}
   m_Name: Syntrichia ruralis
   m_EditorClassIdentifier: Assembly-CSharp::MossData
+  id: 0
   GrowthTime: 0
   DecayTime: 0
   LikesWater: 0
   LikesSun: 0
   LikesRock: 0
   LikesGround: 0
+  NameKey: SyntrichiaRuralis
+  DetailedKey: SyntrichiaRuralisDetailed
+  sprite: {fileID: 0}

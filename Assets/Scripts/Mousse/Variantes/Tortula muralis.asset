@@ -17,7 +17,7 @@ MonoBehaviour:
   DecayTime: 0
   LikesWater: 0
   LikesSun: 0
-  LikesRock: 0
+  LikesRock: 1
   LikesGround: 0
   NameKey: TortulaMuralis
   DetailedKey: TortulaMuralisDetailed

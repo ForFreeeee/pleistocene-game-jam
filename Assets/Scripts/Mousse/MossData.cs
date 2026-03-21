@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Localization;
 
 [CreateAssetMenu(fileName = "MossData", menuName = "Scriptable Objects/MossData")]
 public class MossData : ScriptableObject

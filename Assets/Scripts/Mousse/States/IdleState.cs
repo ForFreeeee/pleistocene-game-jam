@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 namespace GameDev.Moss.States
@@ -24,6 +25,17 @@ namespace GameDev.Moss.States
         public void GraphicsUpdate()
         {
 
+            if ((moss.MossMeshRenderer.lightmapIndex==-1 && moss.MossData.LikesSun)||
+                (moss.MossMeshRenderer.lightmapIndex!=-1 && !moss.MossData.LikesSun)|| moss.mustDie())
+            {
+                moss.MossStateMachine.TransitionTo(moss.MossStateMachine.deathState);
+                return;
+            }
+            else
+            {
+                moss.MossStateMachine.TransitionTo(moss.MossStateMachine.growthState);
+                return;
+            }
         }
 
         public void PhysicsUpdate()

@@ -9,12 +9,14 @@ public class MossStateMachine
     public IdleState idleState;
     public GrowthState growthState;
     public DeathState deathState;
+    public MatureState matureState;
 
     public MossStateMachine(MossController mossController)
     {
         this.idleState = new IdleState(mossController);
         this.growthState = new GrowthState(mossController);
         this.deathState = new DeathState(mossController);
+        this.matureState = new MatureState(mossController);
     }
 
     public void Initialize(IState startingState)

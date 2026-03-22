@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Hypnum cupressiforme
   m_EditorClassIdentifier: Assembly-CSharp::MossData
   id: 2
-  GrowthTime: 0
-  DecayTime: 0
+  GrowthTime: 1
+  DecayTime: 1
   LikesWater: 1
   LikesSun: 0
   LikesRock: 0

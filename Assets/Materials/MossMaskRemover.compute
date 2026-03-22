@@ -1,0 +1,63 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+RWTexture2D<float4> Result;
+RWStructuredBuffer<int> CoveredArea;
+float2 HitUV;
+uint2 HitXY;
+uint2 Res;
+float1 Step;
+float1 Time;
+
+float2 GetUV(uint3 id)
+{
+    return (id.xy + 0.5f) * Step - 1.0f;
+}
+
+float1 RandomRadius(float1 rdx, uint3 id)
+{
+    float1 randval = (Time * 3033 + 1754 * id.x) * ((178 * id.y) % 23);
+    float1 randval2 = (Time * 173038 + 5678 * id.y) * ((232 * id.x) % 17);
+    //return rdx / 1.5 + abs(sin(randval2)) * rdx + sin(randval) * rdx / 2;
+    return rdx / 1.5 + sin(randval) * rdx / 2;
+
+}
+
+float1 SinusRadius(float1 rdx, uint3 id)
+{
+    int1 dx = id.x - HitXY.x;
+    int1 dy = id.y - HitXY.y;
+    float diff = dx / 1;
+    if (dy != 0) 
+        diff = dx / dy;
+    diff = abs(diff);
+    return rdx/1.5 + sin(diff/10) * rdx / 3;
+}
+
+[numthreads(8,8,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    /*if (id.x == HitXY.x && id.y == HitXY.y)
+    for (int i = -20; i < 20; i++)
+    {
+        for (int j = -20; j < 20; j++)
+        {
+                float idx = (HitXY.x + i)%Res.x;
+                if (idx < 0) idx = Res.x - idx;
+                float idy = (HitXY.y + j) % Res.y;
+                if (idy < 0) idy = Res.y - idy;
+                float2 nid = float2(idx, idy);
+                Result[nid] = float4(1, 1, 1, 1);
+        }
+
+    }*/
+    float1 random_rdx = RandomRadius(50, id);
+    if (((HitXY.x - id.x) * (HitXY.x - id.x)) + ((HitXY.y - id.y) * (HitXY.y - id.y)) < random_rdx * random_rdx)
+        Result[id.xy] = float4(0, 0, 0, 0);
+    if (Result[id.xy].x < 0.5f)
+        CoveredArea[id.x + id.y * Res.x] = 1;
+    else 
+        CoveredArea[id.x + id.y * Res.x] = 0;
+  
+}

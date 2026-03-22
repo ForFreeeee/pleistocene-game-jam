@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tortula muralis
   m_EditorClassIdentifier: Assembly-CSharp::MossData
   id: 5
-  GrowthTime: 0
+  GrowthTime: 1
   DecayTime: 0
   LikesWater: 0
   LikesSun: 0

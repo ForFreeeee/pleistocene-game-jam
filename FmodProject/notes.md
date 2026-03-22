@@ -5,7 +5,7 @@ Crane posé contre un rocher dans une ambiance de terrain vague.
 ## Menu démarrer
 
 1. Choix de la langue
-    - [] bruit hover / clic
+    - [x] bruit hover / clic
 2. Clic pour démarrer
     - [] pas de son?
 
@@ -23,10 +23,10 @@ Crane posé contre un rocher dans une ambiance de terrain vague.
 ## Jeu
 
 1. On pose les mousses avec une brosse, qui poussent progressivement, montrant le temps qui passe. 
-    - [] "pop" des mousses qui poussent avec bruit de croissance et froufrou (bille qui se dépose, germe, si reproduction croissance de la "racine", croissance de la mousse)
+    - [x] "pop" des mousses qui poussent avec bruit de croissance et froufrou (bille qui se dépose, germe, si reproduction croissance de la "racine", croissance de la mousse)
     - [] base pour le sol (terre, eau, rien pour le bois ou béton?)
 2. la mousse meure presque immédiatement si posée au mauvais endroit (pousse un peu et se flétri
-    - [] feedback direct à la pose que c'est mmauvais (légère croissance dissonante puis flétrissement)
+    - [x] feedback direct à la pose que c'est mmauvais (légère croissance dissonante puis flétrissement)
 3. la scène est progressivement recouverte
     - [] la musique se construit avec le nombre de mousses posées / la quantité recouverte
     - [] type botanica avec éléments aléatoire, peu de construction musicale
@@ -38,8 +38,7 @@ Crane posé contre un rocher dans une ambiance de terrain vague.
 
 ## Menu de jeu
 
-- [] hover sur un bouton de mousse
-- [] clic gauche pour sélectionner
-- [] clic droit affhicher infos ?
+- [x] hover sur un bouton de mousse
+- [x] clic gauche pour sélectionner
 - [] icones qui apparaissent à côté de la mousse pour montrer ce qu'elle aime ou pas
 - [] Menu de pause hover et clic, entrée / sortie du menu

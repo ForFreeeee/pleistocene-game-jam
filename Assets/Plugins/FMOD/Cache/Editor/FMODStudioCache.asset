@@ -537,7 +537,7 @@ MonoBehaviour:
   Path: FmodProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639097863586506764
+  lastModified: 639097900405599637
   FileSizes:
   - Name: Desktop
     Value: 6598368
@@ -613,7 +613,7 @@ MonoBehaviour:
   Path: FmodProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639097863586621142
+  lastModified: 639097900405614693
   FileSizes:
   - Name: Desktop
     Value: 1162

@@ -3,6 +3,7 @@
 // Create a RenderTexture with enableRandomWrite flag and set it
 // with cs.SetTexture
 RWTexture2D<float4> Result;
+RWStructuredBuffer<int> CoveredArea;
 float2 HitUV;
 uint2 HitXY;
 uint2 Res;
@@ -54,5 +55,9 @@ void CSMain (uint3 id : SV_DispatchThreadID)
     float1 random_rdx = RandomRadius(50, id);
     if (((HitXY.x - id.x) * (HitXY.x - id.x)) + ((HitXY.y - id.y) * (HitXY.y - id.y)) < random_rdx * random_rdx)
         Result[id.xy] = float4(0, 0, 0, 0);
+    if (Result[id.xy].x < 0.5f)
+        CoveredArea[id.x + id.y * Res.x] = 1;
+    else 
+        CoveredArea[id.x + id.y * Res.x] = 0;
   
 }

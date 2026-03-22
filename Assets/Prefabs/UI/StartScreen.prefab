@@ -584,7 +584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3089273491169776244, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 953.49
       objectReference: {fileID: 0}
     - target: {fileID: 3089273491169776244, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_SizeDelta.y
@@ -620,11 +620,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3089273491169776244, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -0.0049438
       objectReference: {fileID: 0}
     - target: {fileID: 3089273491169776244, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 432.25
       objectReference: {fileID: 0}
     - target: {fileID: 3089273491169776244, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -641,10 +641,6 @@ PrefabInstance:
     - target: {fileID: 6664361649083964267, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_Name
       value: Text Localized
-      objectReference: {fileID: 0}
-    - target: {fileID: 7889793767084041544, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -867,7 +863,7 @@ PrefabInstance:
     - target: {fileID: 8001171755910248887, guid: 244ff4dbfabc0774985a1440dc9c92cf, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -9169362572845225108, guid: 90331052857033d4ebafe0b479b077de, type: 2}
+      objectReference: {fileID: 8565199485881015097, guid: c9db1b82f76906f4a846141acb678424, type: 2}
     - target: {fileID: 8001171755910248887, guid: 244ff4dbfabc0774985a1440dc9c92cf, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278190080
@@ -989,11 +985,11 @@ PrefabInstance:
     - target: {fileID: 7889793767084041544, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 15aa8486222461f44a1078e0a2173e37, type: 2}
+      objectReference: {fileID: 11400000, guid: 428586ba67423604092bfbb7922556c5, type: 2}
     - target: {fileID: 7889793767084041544, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 3525463677787462932, guid: 15aa8486222461f44a1078e0a2173e37, type: 2}
+      objectReference: {fileID: -2891610112143961466, guid: 428586ba67423604092bfbb7922556c5, type: 2}
     - target: {fileID: 7889793767084041544, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295

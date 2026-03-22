@@ -13,6 +13,7 @@ public class MossData : ScriptableObject
    public Vector3 finalGrowthSize;
 
     public string NameKey;
+    public string ShortDescriptionKey;
     public string DetailedKey;
     public Sprite sprite;
 }

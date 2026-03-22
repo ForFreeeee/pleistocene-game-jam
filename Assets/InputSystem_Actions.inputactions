@@ -86,15 +86,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "MoveArround",
-                    "type": "Button",
-                    "id": "3506db14-9039-42aa-8f25-84e029526e90",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -480,17 +471,6 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Crouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "37eb12b1-5588-442b-9bfb-3ba053c42f37",
-                    "path": "<Mouse>/middleButton",
-                    "interactions": "Hold(duration=1000,pressPoint=0.2)",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "MoveArround",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

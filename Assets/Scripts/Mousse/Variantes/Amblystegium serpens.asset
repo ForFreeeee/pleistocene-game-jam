@@ -19,10 +19,10 @@ MonoBehaviour:
   LikesSun: 1
   LikesRock: 0
   LikesGround: 0
-  finalGrowthSize: {x: 0.02, y: 0.04, z: 0.02}
+  finalGrowthSize: {x: 1.2, y: 1.8, z: 1.2}
   mossRadius: 0.2
-  mossRadiusShift: 0.08
-  mossAngleVariation: 20
+  mossRadiusShift: 0.15
+  mossAngleVariation: 15
   mossDensity: 30
   mossDensityVariation: 5
   NameKey: AmblystegiumSerpensName

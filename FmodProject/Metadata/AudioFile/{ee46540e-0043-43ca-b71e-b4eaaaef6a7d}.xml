@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{ee46540e-0043-43ca-b71e-b4eaaaef6a7d}">
+		<property name="assetPath">
+			<value>Music/Voices/02 Alto.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>123.75</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8c721cbb-d424-4e4e-af8b-cb1b0edc7f74}</destination>
+		</relationship>
+	</object>
+</objects>

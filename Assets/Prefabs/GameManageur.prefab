@@ -69,3 +69,5 @@ MonoBehaviour:
   focusGO: {fileID: 0}
   speed: 0.001
   delay: 0.1
+  mossShooter: {fileID: 0}
+  mossAmountWinCondition: 3

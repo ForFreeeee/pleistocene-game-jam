@@ -4,7 +4,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class MossManageur : MonoBehaviour
+public class GameManageur : MonoBehaviour
 {
     int selectedMossId;
     [SerializeReference]
@@ -13,6 +13,12 @@ public class MossManageur : MonoBehaviour
     [SerializeField]
     MossButtonUIManager mossButtonUIManager;
 
+    [SerializeField]
+    MossShooter mossShooter;
+
+    [SerializeField]
+    int mossAmountWinCondition;
+
     void Start()
     {
         selectedMossId = -1;
@@ -20,6 +26,14 @@ public class MossManageur : MonoBehaviour
         mossButtonUIManager.Init(mossList, ChangeSelectedMoss, ChangeHoverMoss);
 
         ChangeSelectedMoss();
+    }
+
+    void Update()
+    {
+        if(mossShooter.GetMossAmount() >= mossAmountWinCondition)
+        {
+            LauchEndGame();
+        }
     }
 
     void ChangeSelectedMoss()

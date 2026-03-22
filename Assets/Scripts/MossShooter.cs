@@ -73,6 +73,7 @@ public class MossShooter : MonoBehaviour
                     return;
                 Debug.Log("Got a hit");
                 GenerateMoss(hit, hit.collider.gameObject);
+                moss_coverable.AddMoss(hit.point, hit.textureCoord);
             }
             m_currentDelay = m_setDelayValue;
         }
@@ -88,6 +89,7 @@ public class MossShooter : MonoBehaviour
         //Debug.Log(childMoss.transform.up);
         parentMoss.transform.rotation = Quaternion.FromToRotation(parentMoss.transform.up, hit.normal); 
         //childMoss.transform.rotation.SetLookRotation(hit.normal);
+
         m_ParentMossObjects.Add(parentMoss);    
         GenerateRandomSubMoss(normal, parentMoss);
     }

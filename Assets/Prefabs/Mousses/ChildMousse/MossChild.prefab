@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 662224565732151508}
   - component: {fileID: 4706994745302780655}
   - component: {fileID: 3843498000441047391}
-  - component: {fileID: 7751777314128651442}
   m_Layer: 0
-  m_Name: Moss
+  m_Name: MossChild
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,17 +113,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4008379088863283602, guid: b9eb48e4ecbb0e94f9ddc069fb439ceb, type: 3}
---- !u!114 &7751777314128651442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3812012402024367943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dbf263d41cd77e4789a8cc891612dc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MossController
-  MossData: {fileID: 11400000, guid: fc6d662cc842690409d37ceb3b137101, type: 2}
-  willDie: 0

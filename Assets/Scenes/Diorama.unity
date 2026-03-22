@@ -5351,6 +5351,8 @@ GameObject:
   - component: {fileID: 833533342}
   - component: {fileID: 833533341}
   - component: {fileID: 833533340}
+  - component: {fileID: 833533344}
+  - component: {fileID: 833533345}
   m_Layer: 0
   m_Name: MossShooter
   m_TagString: Untagged
@@ -5502,6 +5504,30 @@ MonoBehaviour:
   m_mossScale: {x: 1.2, y: 1.8, z: 1.2}
   m_camera: {fileID: 760738914}
   m_setDelayValue: 0.3
+  m_toBeCovered:
+  - {fileID: 2113567207}
+  - {fileID: 2113567209}
+  - {fileID: 2113567211}
+  - {fileID: 2070252140}
+  m_neededToWin:
+  - 50
+  - 50
+  - 50
+  - 50
+  m_mainTheme:
+    Guid:
+      Data1: 1262689941
+      Data2: 1249957737
+      Data3: 727247240
+      Data4: -2073096973
+    Path: event:/MainTheme
+  m_mossGrowing:
+    Guid:
+      Data1: -1191494082
+      Data2: 1231230234
+      Data3: -1313154151
+      Data4: 1305114013
+    Path: event:/MossGrowth
 --- !u!4 &833533342
 Transform:
   m_ObjectHideFlags: 0
@@ -5517,6 +5543,76 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &833533344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833533339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1262689941
+      Data2: 1249957737
+      Data3: 727247240
+      Data4: -2073096973
+    Path: event:/MainTheme
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params:
+  - Name: Completion
+    Value: 0
+  - Name: NbOfMosses
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &833533345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833533339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1191494082
+      Data2: 1231230234
+      Data3: -1313154151
+      Data4: 1305114013
+    Path: event:/MossGrowth
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params:
+  - Name: CanGrow
+    Value: 1
+  - Name: Ground
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &857618564
 PrefabInstance:
   m_ObjectHideFlags: 0

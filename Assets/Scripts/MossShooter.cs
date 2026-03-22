@@ -1,5 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
+using FMOD;
 using UnityEngine.InputSystem;
 
 public class MossShooter : MonoBehaviour
@@ -47,6 +50,49 @@ public class MossShooter : MonoBehaviour
 
     bool m_isSpraying;
 
+    [SerializeField]
+    EventReference m_mainTheme;
+    [SerializeField]
+    EventReference m_mossGrowing;
+
+    Dictionary<string, FMOD.Studio.EventInstance> eventInstances;
+
+    Dictionary<string, FMODUnity.StudioEventEmitter> m_emitters; 
+
+    public void CreateEventInstance(string eventName, EventReference eventReference)
+    {
+        FMOD.Studio.EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
+        eventInstances.Add(eventName, eventInstance);
+    }
+
+    public void PlayEventInstance(string eventName)
+    {
+        if (m_emitters.TryGetValue(eventName, out FMODUnity.StudioEventEmitter emitter))
+        {
+            emitter.Play();
+        }
+        else
+        {
+            UnityEngine.Debug.LogWarning($"Event instance '{eventName}' not found.");
+        }
+    }
+
+    public void StopEventInstance(string eventName)
+    {
+        if (m_emitters.TryGetValue(eventName, out FMODUnity.StudioEventEmitter emitter))
+        {
+            emitter.Stop();
+        }
+    }
+
+    public void SetParameter(string eventName, string parameterName, float value)
+    {
+        if (m_emitters.TryGetValue(eventName, out FMODUnity.StudioEventEmitter emitter))
+        {
+            emitter.SetParameter(parameterName, value);
+        }
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -56,6 +102,23 @@ public class MossShooter : MonoBehaviour
         m_coveredSurface = new float[m_toBeCovered.Length];
         for (int i = 0; i < m_coveredSurface.Length; i++)
             m_coveredSurface[i] = 0;
+
+        eventInstances = new Dictionary<string, EventInstance>();
+
+        m_emitters = new Dictionary<string, StudioEventEmitter>();
+        FMODUnity.StudioEventEmitter[] emitters_array = GetComponents<FMODUnity.StudioEventEmitter>();
+        EventDescription ed;
+        for (int i = 0; i < emitters_array.Length; i++)
+        {
+            m_emitters.Add(emitters_array[i].EventReference.Path, emitters_array[i]);
+        }
+
+
+        //CreateEventInstance("MainTheme", m_mainTheme);
+        PlayEventInstance("event:/MainTheme");
+        //CreateEventInstance("MossGrowth", m_mossGrowing);
+        //SetParameter("event:/MossGrowth", "CanGrow", 1);
+        //PlayEventInstance("event:/MossGrowth");
     }
 
     bool CheckWinCond()
@@ -70,7 +133,17 @@ public class MossShooter : MonoBehaviour
 
     void UpdateCoveredSurface(float coveredSurface, GameObject gameObject)
     {
-        
+        for (int i = 0; i < m_toBeCovered.Length; i++)
+        {
+            if (m_toBeCovered[i] == gameObject)
+                m_coveredSurface[i] = coveredSurface;
+        }
+
+        float average_coverage = 0.0f;
+        for (int i = 0; i < m_coveredSurface.Length; i++)
+            average_coverage += m_coveredSurface[i];
+        average_coverage = average_coverage / m_coveredSurface.Length;
+        SetParameter("MainTheme", "Completion", average_coverage/100.0f);
     }
 
     // Update is called once per frame
@@ -78,38 +151,52 @@ public class MossShooter : MonoBehaviour
     {
         m_currentDelay -= Time.deltaTime;
         Vector2 val = Mouse.current.position.ReadValue();
-        Debug.Log(val);
+        UnityEngine.Debug.Log(val);
 
         if (m_currentDelay < 0 && m_isSpraying)
         {
             Vector3 point = Camera.main.ScreenToWorldPoint(new Vector3(val.x, val.y, Camera.main.nearClipPlane));
-            Debug.Log(point);
+            UnityEngine.Debug.Log(point);
             Ray r = new Ray(Camera.main.transform.position, point - Camera.main.transform.position);
             RaycastHit hit;
-            Debug.DrawRay(r.origin, r.direction * 100, Color.red, 3.0f);
+            UnityEngine.Debug.DrawRay(r.origin, r.direction * 100, Color.red, 3.0f);
             if (Physics.Raycast(r, out hit))
             {
                 MossCoverable moss_coverable = hit.collider.gameObject.GetComponent<MossCoverable>();
                 if (moss_coverable == null)
+                {
+                    //SetParameter("MossGrowth", "CanGrow", 0);
                     return;
-                Debug.Log("Got a hit");
+                }
+                //SetParameter("MossGrowth", "CanGrow", 1);
+                UnityEngine.Debug.Log("Got a hit");
                 GenerateMoss(hit, hit.collider.gameObject);
                 float covered_surface = moss_coverable.AddMoss(hit.point, hit.textureCoord);
+                UpdateCoveredSurface(covered_surface, hit.collider.gameObject);
+                if (CheckWinCond() == true)
+                    return; // insert code to finish game here
+            } else
+            {
+                //SetParameter("MossGrowth", "CanGrow", 0);
             }
-            m_currentDelay = m_setDelayValue;
+                m_currentDelay = m_setDelayValue;
         }
     }
 
     public void OnShoot(InputAction.CallbackContext context)
     {
-        Debug.Log("Clicked detected");
+        UnityEngine.Debug.Log("Clicked detected");
         m_isSpraying = context.ReadValueAsButton();
+        if (m_isSpraying)
+            PlayEventInstance("event:/MossGrowth");
+        else
+            StopEventInstance("event:/MossGrowth");
     }
 
     void GenerateMoss(RaycastHit hit, GameObject hit_object) {
        Vector3 hitpoint = hit.point;
         Vector3 normal = hit.normal;
-        Debug.Log(hit.normal);
+        UnityEngine.Debug.Log(hit.normal);
         GameObject parentMoss = Instantiate(m_parentMoss, hitpoint, Quaternion.identity);
         //GenerateRandomSubMoss(normal, childMoss);
         parentMoss.transform.localScale = m_mossScale;

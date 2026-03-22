@@ -71,7 +71,7 @@ public class MossCoverable : MonoBehaviour
                 coveredAreaSize += m_result[j + i * 2048];
         Debug.Log("Covered Area proportion :");
         Debug.Log(((float)coveredAreaSize / (2048.0f * 2048.0f)) * 100.0f);
-        return (float)coveredAreaSize / (2048.0f * 2048.0f);
+        return (((float)coveredAreaSize / (2048.0f * 2048.0f)) * 100.0f);
     }
 
     // Update is called once per frame

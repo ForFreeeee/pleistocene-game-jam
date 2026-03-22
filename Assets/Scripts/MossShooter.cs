@@ -5,28 +5,13 @@ using UnityEngine.InputSystem;
 public class MossShooter : MonoBehaviour
 {
     [SerializeField]
-    GameObject m_parentMoss;
-    [SerializeField]
-    GameObject m_childMoss;
-
-    [SerializeField]
-    float m_mossRadius;
-
-    [SerializeField]
-    float m_mossRadiusShift;
-
-    [SerializeField]
-    float m_mossAngleVariation;
-
-    [SerializeField]
-    int m_mossDensity;
-
-    [SerializeField]
-    float m_mossAmountVariation;
+    GameObject sceneLight;
 
     [SerializeField]
     Vector3 m_mossScale;
 
+    [SerializeField]
+    MossData m_currentMoss;
     List<GameObject> m_ParentMossObjects;
 
     [SerializeField]
@@ -46,6 +31,8 @@ public class MossShooter : MonoBehaviour
     float[] m_coveredSurface;
 
     bool m_isSpraying;
+
+    [SerializeField] GameManageur gameManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -78,7 +65,7 @@ public class MossShooter : MonoBehaviour
     {
         m_currentDelay -= Time.deltaTime;
         Vector2 val = Mouse.current.position.ReadValue();
-        Debug.Log(val);
+        //Debug.Log(val);
 
         if (m_currentDelay < 0 && m_isSpraying)
         {
@@ -93,26 +80,45 @@ public class MossShooter : MonoBehaviour
                 if (moss_coverable == null)
                     return;
                 Debug.Log("Got a hit");
-                GenerateMoss(hit, hit.collider.gameObject);
-                float covered_surface = moss_coverable.AddMoss(hit.point, hit.textureCoord);
+                if (CanPlaceParentMoss(hit.collider.gameObject.tag))
+                {
+                    GenerateMoss(hit, hit.collider.gameObject);
+                }
             }
             m_currentDelay = m_setDelayValue;
         }
     }
-
-    public void OnShoot(InputAction.CallbackContext context)
+    bool CanPlaceParentMoss(string hitTag)
     {
-        Debug.Log("Clicked detected");
-        m_isSpraying = context.ReadValueAsButton();
+        if(hitTag=="OutOfBounds")
+        {
+            Debug.Log("Can't place moss here");
+            return false;
+        }
+        return true;
     }
 
-    void GenerateMoss(RaycastHit hit, GameObject hit_object) {
-       Vector3 hitpoint = hit.point;
+    
+    public void OnShoot(InputAction.CallbackContext context)
+    {
+        //Debug.Log("Clicked detected");
+        m_isSpraying = context.ReadValueAsButton();
+    }
+    
+    void GenerateMoss(RaycastHit hit, GameObject hit_object) {        
+        Vector3 hitpoint = hit.point;
         Vector3 normal = hit.normal;
         Debug.Log(hit.normal);
-        GameObject parentMoss = Instantiate(m_parentMoss, hitpoint, Quaternion.identity);
+        GameObject parentMoss = Instantiate(m_currentMoss.parentMossPrefab, hitpoint, Quaternion.identity);
+        MossController mossController=parentMoss.GetComponent<MossController>();
+        mossController.hitPoint=hit.point;
+        mossController.textureCoord=hit.textureCoord;
+        mossController.moss_coverable=hit_object.GetComponent<MossCoverable>();
+        mossController.directionalLight=sceneLight;
+        mossController.gameManageur=gameManager;
         //GenerateRandomSubMoss(normal, childMoss);
         parentMoss.transform.localScale = m_mossScale;
+        parentMoss.GetComponent<MossController>().ShouldMossLive(hit_object.tag);
         //Debug.Log(childMoss.transform.up);
         parentMoss.transform.rotation = Quaternion.FromToRotation(parentMoss.transform.up, hit.normal); 
         //childMoss.transform.rotation.SetLookRotation(hit.normal);
@@ -122,7 +128,7 @@ public class MossShooter : MonoBehaviour
     }
 
     void GenerateRandomSubMoss(Vector3 normal, GameObject parentMoss) {;
-        float amount=Random.Range(m_mossDensity-m_mossAmountVariation, m_mossDensity+m_mossAmountVariation);
+        float amount=Random.Range(m_currentMoss.mossDensity-m_currentMoss.mossDensityVariation, m_currentMoss.mossDensity+m_currentMoss.mossDensityVariation);
         Vector3 up=normal.normalized;
         Vector3 forwardHint = Vector3.forward;
         if (Vector3.Dot(up, forwardHint.normalized) > 0.999f)
@@ -134,17 +140,26 @@ public class MossShooter : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             float randomAngle = Random.Range(0, 360);
-            float radius = Random.Range(m_mossRadius-m_mossRadiusShift, m_mossRadius+(m_mossRadiusShift/2));  
+            float radius = Random.Range(m_currentMoss.mossRadius-m_currentMoss.mossRadiusShift, m_currentMoss.mossRadius+(m_currentMoss.mossRadiusShift/2));  
             Vector3 offset=radius * (Mathf.Cos(randomAngle) * right + Mathf.Sin(randomAngle) * forward);
-            GameObject childMoss = Instantiate(m_childMoss, parentMoss.transform.position+offset, parentMoss.transform.rotation);
-            childMoss.transform.localScale = parentMoss.transform.localScale;
-            float angleZ = Random.Range(parentMoss.transform.eulerAngles.z-m_mossAngleVariation, parentMoss.transform.eulerAngles.z + m_mossAngleVariation);
-            float angleX = Random.Range(parentMoss.transform.eulerAngles.x-m_mossAngleVariation, parentMoss.transform.eulerAngles.x + m_mossAngleVariation);
+            GameObject childMoss = Instantiate(m_currentMoss.childMossPrefab, parentMoss.transform.position+offset, parentMoss.transform.rotation);
+            float angleZ = Random.Range(-m_currentMoss.mossAngleVariation, m_currentMoss.mossAngleVariation);
+            float angleX = Random.Range(-m_currentMoss.mossAngleVariation, m_currentMoss.mossAngleVariation);
             float angleY = Random.Range(0, 360);
             childMoss.transform.RotateAround(childMoss.transform.position, up, angleY);
             childMoss.transform.RotateAround(childMoss.transform.position, right, angleX);
             childMoss.transform.RotateAround(childMoss.transform.position, forward, angleZ);
             childMoss.transform.SetParent(parentMoss.transform, worldPositionStays: true);
         }  
+    }
+
+    public int GetMossAmount()
+    {
+        return m_ParentMossObjects.Count;
+    }
+
+    public void SetMoss(MossData mossData)
+    {
+        m_currentMoss = mossData;
     }
 }

@@ -53,6 +53,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 646f8933544f901449d558cb2c33f884, type: 2}
   - {fileID: 11400000, guid: fc6d662cc842690409d37ceb3b137101, type: 2}
   mossButtonUIManager: {fileID: 0}
+  mossShooter: {fileID: 0}
+  mossAmountWinCondition: 10
+  surfaceCoveredWinCondition: 1
+  surfaceCovered: 0
 --- !u!114 &1957908908321782041
 MonoBehaviour:
   m_ObjectHideFlags: 0

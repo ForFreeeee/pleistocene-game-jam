@@ -35,7 +35,7 @@ public class MossStateMachine
     {
         if (CurrentState != null)
         {
-            Debug.Log(CurrentState.ToString());
+            //Debug.Log(CurrentState.ToString());
             CurrentState.GraphicsUpdate();
         }
     }

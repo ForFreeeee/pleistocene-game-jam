@@ -5492,8 +5492,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdd55a34fb05204bb480d771329f577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MossShooter
-  m_mossScale: {x: 0.2, y: 0.4, z: 0.2}
-  m_currentMoss: {fileID: 11400000, guid: 43c2cdc435752c14a8f739ea48722245, type: 2}
+  sceneLight: {fileID: 2099514747}
+  m_mossScale: {x: 1, y: 1, z: 1}
+  m_currentMoss: {fileID: 11400000, guid: 488d1c6139e221447abd126ba316b8b2, type: 2}
   m_camera: {fileID: 760738914}
   m_setDelayValue: 0.3
 --- !u!4 &833533342
@@ -5583,6 +5584,36 @@ PrefabInstance:
 --- !u!4 &1667421975 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
+--- !u!1 &1547733895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6702488842079860923, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
+  m_PrefabInstance: {fileID: 2113567206}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1547733897
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547733895}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3048581061611683640, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
+--- !u!1 &1880105333 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2550463727306718371, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
   m_PrefabInstance: {fileID: 2113567206}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1965130332
@@ -5675,6 +5706,7 @@ GameObject:
   - component: {fileID: 2099514750}
   - component: {fileID: 2099514749}
   - component: {fileID: 2099514748}
+  - component: {fileID: 2099514751}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -5791,6 +5823,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50.21, y: -93.5, z: 0}
+--- !u!135 &2099514751
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099514747}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2113567206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5839,9 +5892,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7181560015305814256, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
       propertyPath: m_Name
       value: Diorama
+      objectReference: {fileID: 0}
+    - target: {fileID: 1094559010302358929, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
+      propertyPath: m_TagString
+      value: Fence
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550463727306718371, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692254488790982148, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702488842079860923, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
+      propertyPath: m_TagString
+      value: OutOfBounds
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5874,6 +5947,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -7181560015305814256, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2070252142}
+      addedObject: {fileID: 14270993}
+    - targetCorrespondingSourceObject: {fileID: 6702488842079860923, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1547733897}
   m_SourcePrefab: {fileID: 100100000, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
 --- !u!1 &2113567207 stripped
 GameObject:

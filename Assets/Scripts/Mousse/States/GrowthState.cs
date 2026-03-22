@@ -34,6 +34,7 @@ namespace GameDev.Moss.States
             }
             if (growthTimer <= 0)
             {
+                moss.moss_coverable.AddMoss(moss.hitPoint, moss.textureCoord);
                 moss.MossStateMachine.TransitionTo(moss.MossStateMachine.matureState);
                 return;
             }

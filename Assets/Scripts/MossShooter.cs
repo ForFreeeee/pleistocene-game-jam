@@ -4,29 +4,12 @@ using UnityEngine.InputSystem;
 
 public class MossShooter : MonoBehaviour
 {
-    [SerializeField]
-    GameObject m_parentMoss;
-    [SerializeField]
-    GameObject m_childMoss;
-
-    [SerializeField]
-    float m_mossRadius;
-
-    [SerializeField]
-    float m_mossRadiusShift;
-
-    [SerializeField]
-    float m_mossAngleVariation;
-
-    [SerializeField]
-    int m_mossDensity;
-
-    [SerializeField]
-    float m_mossAmountVariation;
 
     [SerializeField]
     Vector3 m_mossScale;
 
+    [SerializeField]
+    MossData m_currentMoss;
     List<GameObject> m_ParentMossObjects;
 
     [SerializeField]
@@ -110,7 +93,7 @@ public class MossShooter : MonoBehaviour
        Vector3 hitpoint = hit.point;
         Vector3 normal = hit.normal;
         Debug.Log(hit.normal);
-        GameObject parentMoss = Instantiate(m_parentMoss, hitpoint, Quaternion.identity);
+        GameObject parentMoss = Instantiate(m_currentMoss.parentMossPrefab, hitpoint, Quaternion.identity);
         //GenerateRandomSubMoss(normal, childMoss);
         parentMoss.transform.localScale = m_mossScale;
         //Debug.Log(childMoss.transform.up);
@@ -122,7 +105,7 @@ public class MossShooter : MonoBehaviour
     }
 
     void GenerateRandomSubMoss(Vector3 normal, GameObject parentMoss) {;
-        float amount=Random.Range(m_mossDensity-m_mossAmountVariation, m_mossDensity+m_mossAmountVariation);
+        float amount=Random.Range(m_currentMoss.mossDensity-m_currentMoss.mossDensityVariation, m_currentMoss.mossDensity+m_currentMoss.mossDensityVariation);
         Vector3 up=normal.normalized;
         Vector3 forwardHint = Vector3.forward;
         if (Vector3.Dot(up, forwardHint.normalized) > 0.999f)
@@ -134,12 +117,12 @@ public class MossShooter : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             float randomAngle = Random.Range(0, 360);
-            float radius = Random.Range(m_mossRadius-m_mossRadiusShift, m_mossRadius+(m_mossRadiusShift/2));  
+            float radius = Random.Range(m_currentMoss.mossRadius-m_currentMoss.mossRadiusShift, m_currentMoss.mossRadius+(m_currentMoss.mossRadiusShift/2));  
             Vector3 offset=radius * (Mathf.Cos(randomAngle) * right + Mathf.Sin(randomAngle) * forward);
-            GameObject childMoss = Instantiate(m_childMoss, parentMoss.transform.position+offset, parentMoss.transform.rotation);
-            childMoss.transform.localScale = parentMoss.transform.localScale;
-            float angleZ = Random.Range(parentMoss.transform.eulerAngles.z-m_mossAngleVariation, parentMoss.transform.eulerAngles.z + m_mossAngleVariation);
-            float angleX = Random.Range(parentMoss.transform.eulerAngles.x-m_mossAngleVariation, parentMoss.transform.eulerAngles.x + m_mossAngleVariation);
+            GameObject childMoss = Instantiate(m_currentMoss.childMossPrefab, parentMoss.transform.position+offset, parentMoss.transform.rotation);
+            
+            float angleZ = Random.Range(parentMoss.transform.eulerAngles.z-m_currentMoss.mossAngleVariation, parentMoss.transform.eulerAngles.z + m_currentMoss.mossAngleVariation);
+            float angleX = Random.Range(parentMoss.transform.eulerAngles.x-m_currentMoss.mossAngleVariation, parentMoss.transform.eulerAngles.x + m_currentMoss.mossAngleVariation);
             float angleY = Random.Range(0, 360);
             childMoss.transform.RotateAround(childMoss.transform.position, up, angleY);
             childMoss.transform.RotateAround(childMoss.transform.position, right, angleX);
@@ -151,5 +134,10 @@ public class MossShooter : MonoBehaviour
     public int GetMossAmount()
     {
         return m_ParentMossObjects.Count;
+    }
+
+    public void SetMoss(MossData mossData)
+    {
+        m_currentMoss = mossData;
     }
 }

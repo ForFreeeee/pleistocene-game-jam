@@ -39,6 +39,13 @@ public class GameManageur : MonoBehaviour
     void ChangeSelectedMoss()
     {
         selectedMossId = mossButtonUIManager.GetSelectedMooss();
+        foreach(MossData moss in mossList)
+        {
+            if(moss.id == selectedMossId)
+            {
+                mossShooter.SetMoss(moss);
+            }
+        }
     }
     void ChangeHoverMoss(int newMoss)
     {

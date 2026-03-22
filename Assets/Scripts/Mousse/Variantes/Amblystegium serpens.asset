@@ -24,3 +24,5 @@ MonoBehaviour:
   ShortDescriptionKey: AmblystegiumSerpens
   DetailedKey: AmblystegiumSerpensDetailed
   sprite: {fileID: 21300000, guid: d66e7ebcb45d75845af3fc106e9bc00c, type: 3}
+  parentMossPrefab: {fileID: 3812012402024367943, guid: 8cf08bb998075774d872734e44478f26, type: 3}
+  childMossPrefab: {fileID: 4010642043734870900, guid: 7e7aa48a7e87e8444be2f21bab214add, type: 3}

@@ -1000,7 +1000,7 @@
 	</object>
 	<object class="GainEffect" id="{771febe5-5f10-4d5a-b7be-8c0e62dabffb}">
 		<property name="gain">
-			<value>10</value>
+			<value>9.5</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{958b0e2c-052d-49dc-bd2d-1f8e79816719}</destination>

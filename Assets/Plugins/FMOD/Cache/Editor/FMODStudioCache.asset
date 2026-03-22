@@ -199,7 +199,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 101
+  Length: 13
 --- !u!114 &-1299850626277101310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,7 +327,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 6843899792813267651}
   cacheVersion: 131858
-  cacheTime: 639097910158992840
+  cacheTime: 639097936335468694
   SerializableEventsDict:
   - key: event:/Ambience
     index: 0
@@ -517,7 +517,7 @@ MonoBehaviour:
     Data4: 1305114013
   Banks:
   - {fileID: 4467062597781725670}
-  IsStream: 1
+  IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
@@ -525,7 +525,7 @@ MonoBehaviour:
   - {fileID: 988951200594850892}
   MinDistance: 1
   MaxDistance: 20
-  Length: 16392
+  Length: 15500
 --- !u!114 &4053712287655594827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,7 +572,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 62
+  Length: 65
 --- !u!114 &4467062597781725670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -588,10 +588,10 @@ MonoBehaviour:
   Path: FmodProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639097910158992840
+  lastModified: 639097936335411829
   FileSizes:
   - Name: Desktop
-    Value: 6598368
+    Value: 6311776
   Exists: 1
 --- !u!114 &5160153596890503300
 MonoBehaviour:
@@ -637,10 +637,10 @@ MonoBehaviour:
   Path: FmodProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639097908092523926
+  lastModified: 639097936335468694
   FileSizes:
   - Name: Desktop
-    Value: 1162
+    Value: 1280
   Exists: 1
 --- !u!114 &6971227851655504133
 MonoBehaviour:

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{c483bb49-9c50-411b-9231-969a2b94079c}">
+		<property name="name">
+			<value>NbOfMosses</value>
+		</property>
+		<relationship name="folder">
+			<destination>{55718ce0-0c70-432b-8af0-7c5cbb0f7e8d}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{15740079-e850-4d80-85f2-dd3562970ba1}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{15740079-e850-4d80-85f2-dd3562970ba1}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>7</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

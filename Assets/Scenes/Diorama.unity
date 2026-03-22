@@ -469,6 +469,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4596239184023814631, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
+--- !u!114 &1139620238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139620233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 224d5f28090862540b1f69d22fbe6c83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MossCoverable
+  m_mossMaskLayer: {fileID: -876546973899608171, guid: 42da8ae10d135ca4289c86b815fcab34, type: 3}
+  m_mossTexture: {fileID: 2800000, guid: c7e10db9d2715744d998416bb8c03abd, type: 3}
+  m_mossRemover: {fileID: 7200000, guid: d42a92ba153a93f4690d8c38d589cf0d, type: 3}
+  m_mossInit: {fileID: 7200000, guid: ca985750d8cf5f64ba73c4f32ff7779b, type: 3}
 --- !u!1 &1198028273 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7181560015305814256, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
@@ -652,6 +668,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4013275331872712965, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
+--- !u!114 &1711690516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711690511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 224d5f28090862540b1f69d22fbe6c83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MossCoverable
+  m_mossMaskLayer: {fileID: -876546973899608171, guid: bcdc4486d65e6f74f807499ff8594255, type: 3}
+  m_mossTexture: {fileID: 2800000, guid: c7e10db9d2715744d998416bb8c03abd, type: 3}
+  m_mossRemover: {fileID: 7200000, guid: d42a92ba153a93f4690d8c38d589cf0d, type: 3}
+  m_mossInit: {fileID: 7200000, guid: ca985750d8cf5f64ba73c4f32ff7779b, type: 3}
 --- !u!1 &1832760169 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2550463727306718371, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
@@ -679,9 +711,28 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -629719859055844128, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
+<<<<<<< HEAD
 =======
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 >>>>>>> d720dbfa92a28ca5e90ca25e433b920e376b4689
+=======
+--- !u!114 &1832760174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832760169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 224d5f28090862540b1f69d22fbe6c83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MossCoverable
+  m_mossMaskLayer: {fileID: -876546973899608171, guid: d2d052ff8b29fd341a0e488a7ce2cb8b, type: 3}
+  m_mossTexture: {fileID: 2800000, guid: c7e10db9d2715744d998416bb8c03abd, type: 3}
+  m_mossRemover: {fileID: 7200000, guid: d42a92ba153a93f4690d8c38d589cf0d, type: 3}
+  m_mossInit: {fileID: 7200000, guid: ca985750d8cf5f64ba73c4f32ff7779b, type: 3}
+>>>>>>> feature.integration.mossmat
 --- !u!1 &2099514747
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,12 +987,21 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1094559010302358929, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1139620237}
+    - targetCorrespondingSourceObject: {fileID: 1094559010302358929, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1139620238}
     - targetCorrespondingSourceObject: {fileID: 2550463727306718371, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1832760173}
+    - targetCorrespondingSourceObject: {fileID: 2550463727306718371, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1832760174}
     - targetCorrespondingSourceObject: {fileID: 3692254488790982148, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1711690515}
+    - targetCorrespondingSourceObject: {fileID: 3692254488790982148, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1711690516}
     - targetCorrespondingSourceObject: {fileID: -7181560015305814256, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1198028277}

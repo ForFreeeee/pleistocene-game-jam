@@ -32,6 +32,8 @@ public class MossShooter : MonoBehaviour
 
     bool m_isSpraying;
 
+    [SerializeField] GameManageur gameManager;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -113,6 +115,7 @@ public class MossShooter : MonoBehaviour
         mossController.textureCoord=hit.textureCoord;
         mossController.moss_coverable=hit_object.GetComponent<MossCoverable>();
         mossController.directionalLight=sceneLight;
+        mossController.gameManageur=gameManager;
         //GenerateRandomSubMoss(normal, childMoss);
         parentMoss.transform.localScale = m_mossScale;
         parentMoss.GetComponent<MossController>().ShouldMossLive(hit_object.tag);

@@ -10,6 +10,7 @@ public class MossController : MonoBehaviour
     public Vector2 textureCoord;
     public MossData MossData;
     public GameObject directionalLight;
+    public GameManageur gameManageur;
 
     [SerializeField]
     private bool willDie;

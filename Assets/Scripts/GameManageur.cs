@@ -18,6 +18,9 @@ public class GameManageur : MonoBehaviour
 
     [SerializeField]
     int mossAmountWinCondition;
+    [SerializeField]
+    float surfaceCoveredWinCondition;
+    public float surfaceCovered;
 
     void Start()
     {
@@ -31,7 +34,7 @@ public class GameManageur : MonoBehaviour
 
     void Update()
     {
-        if(mossShooter.GetMossAmount() >= mossAmountWinCondition)
+        if(mossShooter.GetMossAmount() >= mossAmountWinCondition && surfaceCovered >= surfaceCoveredWinCondition)
         {
             LauchEndGame();
         }

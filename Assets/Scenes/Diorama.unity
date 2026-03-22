@@ -125,7 +125,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1667421975}
+    m_TransformParent: {fileID: 2130104237}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c3e01aca4caf5cf419bfccc92ea8d76d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -178,7 +178,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c3e01aca4caf5cf419bfccc92ea8d76d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2097720334}
   m_SourcePrefab: {fileID: 100100000, guid: c3e01aca4caf5cf419bfccc92ea8d76d, type: 3}
 --- !u!1 &510780810
 GameObject:
@@ -5494,9 +5497,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MossShooter
   sceneLight: {fileID: 2099514747}
   m_mossScale: {x: 1, y: 1, z: 1}
-  m_currentMoss: {fileID: 11400000, guid: 488d1c6139e221447abd126ba316b8b2, type: 2}
+  m_currentMoss: {fileID: 11400000, guid: 03f316828a56ec84f8fbfb05e6a728b2, type: 2}
   m_camera: {fileID: 760738914}
   m_setDelayValue: 0.3
+  m_toBeCovered: []
+  m_neededToWin: []
+  gameManager: {fileID: 857618565}
 --- !u!4 &833533342
 Transform:
   m_ObjectHideFlags: 0
@@ -5569,9 +5575,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 760738914}
     - target: {fileID: 5524592208145225883, guid: 85396cc7fcb3fef47807db4a4107088e, type: 3}
+      propertyPath: mossShooter
+      value: 
+      objectReference: {fileID: 833533341}
+    - target: {fileID: 5524592208145225883, guid: 85396cc7fcb3fef47807db4a4107088e, type: 3}
       propertyPath: mossButtonUIManager
       value: 
       objectReference: {fileID: 511072645}
+    - target: {fileID: 5524592208145225883, guid: 85396cc7fcb3fef47807db4a4107088e, type: 3}
+      propertyPath: mossAmountWinCondition
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5524592208145225883, guid: 85396cc7fcb3fef47807db4a4107088e, type: 3}
+      propertyPath: surfaceCoveredWinCondition
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6527862834321334584, guid: 85396cc7fcb3fef47807db4a4107088e, type: 3}
       propertyPath: m_Name
       value: GameManageur
@@ -5581,9 +5599,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85396cc7fcb3fef47807db4a4107088e, type: 3}
---- !u!4 &1667421975 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
+--- !u!114 &857618565 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5524592208145225883, guid: 85396cc7fcb3fef47807db4a4107088e, type: 3}
+  m_PrefabInstance: {fileID: 857618564}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26f2b17fb28e9124e91e9b29024ff605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MossManageur
 --- !u!1 &1547733895 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6702488842079860923, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
@@ -5611,11 +5637,38 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3048581061611683640, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
+--- !u!1 &1629248503 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c3e01aca4caf5cf419bfccc92ea8d76d, type: 3}
+  m_PrefabInstance: {fileID: 396966043}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1880105333 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2550463727306718371, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
   m_PrefabInstance: {fileID: 2113567206}
   m_PrefabAsset: {fileID: 0}
+--- !u!64 &1880105337
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880105333}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -629719859055844128, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
 --- !u!1 &1965130332
 GameObject:
   m_ObjectHideFlags: 0
@@ -5695,6 +5748,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c3e01aca4caf5cf419bfccc92ea8d76d, type: 3}
   m_PrefabInstance: {fileID: 396966043}
   m_PrefabAsset: {fileID: 0}
+--- !u!64 &2097720334
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629248503}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2124705421725058983, guid: c3e01aca4caf5cf419bfccc92ea8d76d, type: 3}
 --- !u!1 &2099514747
 GameObject:
   m_ObjectHideFlags: 0
@@ -5931,10 +6006,7 @@ PrefabInstance:
       addedObject: {fileID: 2113567213}
     - targetCorrespondingSourceObject: {fileID: 2550463727306718371, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2113567210}
-    - targetCorrespondingSourceObject: {fileID: 2550463727306718371, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2113567214}
+      addedObject: {fileID: 1880105337}
     - targetCorrespondingSourceObject: {fileID: 3692254488790982148, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2113567212}
@@ -5947,7 +6019,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -7181560015305814256, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2070252142}
-      addedObject: {fileID: 14270993}
     - targetCorrespondingSourceObject: {fileID: 6702488842079860923, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1547733897}
@@ -5970,27 +6041,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MossCoverable
   m_mossMaskLayer: {fileID: -876546973899608171, guid: 42da8ae10d135ca4289c86b815fcab34, type: 3}
-  m_mossTexture: {fileID: 2800000, guid: c7e10db9d2715744d998416bb8c03abd, type: 3}
-  m_mossRemover: {fileID: 7200000, guid: d42a92ba153a93f4690d8c38d589cf0d, type: 3}
-  m_mossInit: {fileID: 7200000, guid: ca985750d8cf5f64ba73c4f32ff7779b, type: 3}
---- !u!1 &2113567209 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2550463727306718371, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
-  m_PrefabInstance: {fileID: 2113567206}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2113567210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2113567209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 224d5f28090862540b1f69d22fbe6c83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MossCoverable
-  m_mossMaskLayer: {fileID: -876546973899608171, guid: d2d052ff8b29fd341a0e488a7ce2cb8b, type: 3}
   m_mossTexture: {fileID: 2800000, guid: c7e10db9d2715744d998416bb8c03abd, type: 3}
   m_mossRemover: {fileID: 7200000, guid: d42a92ba153a93f4690d8c38d589cf0d, type: 3}
   m_mossInit: {fileID: 7200000, guid: ca985750d8cf5f64ba73c4f32ff7779b, type: 3}
@@ -6037,28 +6087,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4596239184023814631, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
---- !u!64 &2113567214
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2113567209}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -629719859055844128, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
 --- !u!64 &2113567215
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6081,6 +6109,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4013275331872712965, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
+--- !u!4 &2130104237 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 25b2c773330eb924283bfc98ba923718, type: 3}
+  m_PrefabInstance: {fileID: 2113567206}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

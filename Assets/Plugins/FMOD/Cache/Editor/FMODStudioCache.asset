@@ -149,6 +149,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 87
+--- !u!114 &-4176093551188499285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MainTheme/NbOfMosses
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: NbOfMosses
+  StudioPath: 
+  Min: 0
+  Max: 6
+  Default: 0
+  ID:
+    data1: 2479616636
+    data2: 1215403136
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-2005258931164125396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,6 +249,30 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1070
   Exists: 1
+--- !u!114 &-639710359750003901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MainTheme/Completion
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Completion
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2655286988
+    data2: 3326276856
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-541484163544237992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,7 +327,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 6843899792813267651}
   cacheVersion: 131858
-  cacheTime: 639097851323418624
+  cacheTime: 639097863586621142
   SerializableEventsDict:
   - key: event:/Ambience
     index: 0
@@ -340,13 +388,15 @@ MonoBehaviour:
     Data4: -2073096973
   Banks:
   - {fileID: 4467062597781725670}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: -639710359750003901}
+  - {fileID: -4176093551188499285}
   MinDistance: 1
   MaxDistance: 20
-  Length: 103529
+  Length: 120024
 --- !u!114 &988951200594850892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,10 +588,10 @@ MonoBehaviour:
   Path: FmodProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639097851323411211
+  lastModified: 639097863586506764
   FileSizes:
   - Name: Desktop
-    Value: 2125568
+    Value: 3215360
   Exists: 1
 --- !u!114 &5160153596890503300
 MonoBehaviour:
@@ -587,10 +637,10 @@ MonoBehaviour:
   Path: FmodProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639097851323418624
+  lastModified: 639097863586621142
   FileSizes:
   - Name: Desktop
-    Value: 1070
+    Value: 1162
   Exists: 1
 --- !u!114 &6971227851655504133
 MonoBehaviour:

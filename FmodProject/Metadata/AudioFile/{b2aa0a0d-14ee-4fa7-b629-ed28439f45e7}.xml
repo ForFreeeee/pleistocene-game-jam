@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{b2aa0a0d-14ee-4fa7-b629-ed28439f45e7}">
+		<property name="assetPath">
+			<value>Music/MossTheme.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>120.024</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8c721cbb-d424-4e4e-af8b-cb1b0edc7f74}</destination>
+		</relationship>
+	</object>
+</objects>

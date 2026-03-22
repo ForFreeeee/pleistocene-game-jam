@@ -20,7 +20,8 @@ MonoBehaviour:
   LikesRock: 0
   LikesGround: 1
   finalGrowthSize: {x: 1.5, y: 3, z: 1.5}
-  NameKey: PtychostomumCapillaire
-  ShortDescriptionKey: PtychostomumCapillaireName
+  NameKey: PtychostomumCapillaireName
+  ShortDescriptionKey: PtychostomumCapillaire
   DetailedKey: PtychostomumCapillaireDetailed
-  sprite: {fileID: 21300000, guid: d66e7ebcb45d75845af3fc106e9bc00c, type: 3}
+  spritePhoto: {fileID: 21300000, guid: bcbf7194e858a754fb9d1c48d6d85241, type: 3}
+  spriteColor: {fileID: 21300000, guid: 527dc9ff98ae9a54dbb649f088011b72, type: 3}

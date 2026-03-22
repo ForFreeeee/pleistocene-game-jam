@@ -497,6 +497,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1170905923360998032, guid: 3bbd7e0680df44b429bb871fd72c434a, type: 3}
+      propertyPath: m_fontSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4231275028846403074, guid: 3bbd7e0680df44b429bb871fd72c434a, type: 3}
+      propertyPath: m_fontSize
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 4743268641775125828, guid: 3bbd7e0680df44b429bb871fd72c434a, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -580,6 +588,14 @@ PrefabInstance:
     - target: {fileID: 4805123668928515447, guid: 3bbd7e0680df44b429bb871fd72c434a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887384994511094210, guid: 3bbd7e0680df44b429bb871fd72c434a, type: 3}
+      propertyPath: m_fontSize
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316769034508709804, guid: 3bbd7e0680df44b429bb871fd72c434a, type: 3}
+      propertyPath: m_fontSize
+      value: 32
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -55,17 +55,14 @@ public class ExplainCanvas : MonoBehaviour
             Show(true);
             localizedName.TableEntryReference = mossData.NameKey;
             localizedName.RefreshString();
-            NameText.text = localizedName.GetLocalizedString();
 
             localizedShortDescription.TableEntryReference = mossData.ShortDescriptionKey;
             localizedShortDescription.RefreshString();
-            ShortDescriptionText.text = localizedShortDescription.GetLocalizedString();
 
             localizedDetailed.TableEntryReference = mossData.DetailedKey;
             localizedDetailed.RefreshString();
-            DetailedText.text = localizedName.GetLocalizedString();
 
-            image.sprite = mossData.sprite;
+            image.sprite = mossData.spritePhoto;
         }
     }
 

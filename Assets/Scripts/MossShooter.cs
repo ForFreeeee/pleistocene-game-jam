@@ -40,26 +40,23 @@ public class MossShooter : MonoBehaviour
     float m_currentDelay;
 
 
+    bool m_isSpraying;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         m_ParentMossObjects = new List<GameObject>();
+        m_isSpraying = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         m_currentDelay -= Time.deltaTime;
-        
-    }
-
-    public void OnShoot(InputAction.CallbackContext context)
-    {
-        Debug.Log("Clicked detected");
         Vector2 val = Mouse.current.position.ReadValue();
         Debug.Log(val);
 
-        if (m_currentDelay < 0)
+        if (m_currentDelay < 0 && m_isSpraying)
         {
             Vector3 point = Camera.main.ScreenToWorldPoint(new Vector3(val.x, val.y, Camera.main.nearClipPlane));
             Debug.Log(point);
@@ -77,6 +74,12 @@ public class MossShooter : MonoBehaviour
             }
             m_currentDelay = m_setDelayValue;
         }
+    }
+
+    public void OnShoot(InputAction.CallbackContext context)
+    {
+        Debug.Log("Clicked detected");
+        m_isSpraying = context.ReadValueAsButton();
     }
 
     void GenerateMoss(RaycastHit hit, GameObject hit_object) {
@@ -110,7 +113,7 @@ public class MossShooter : MonoBehaviour
             float radius = Random.Range(m_mossRadius-m_mossRadiusShift, m_mossRadius+(m_mossRadiusShift/2));  
             Vector3 offset=radius * (Mathf.Cos(randomAngle) * right + Mathf.Sin(randomAngle) * forward);
             GameObject childMoss = Instantiate(m_childMoss, parentMoss.transform.position+offset, parentMoss.transform.rotation);
-            
+            childMoss.transform.localScale = parentMoss.transform.localScale;
             float angleZ = Random.Range(parentMoss.transform.eulerAngles.z-m_mossAngleVariation, parentMoss.transform.eulerAngles.z + m_mossAngleVariation);
             float angleX = Random.Range(parentMoss.transform.eulerAngles.x-m_mossAngleVariation, parentMoss.transform.eulerAngles.x + m_mossAngleVariation);
             float angleY = Random.Range(0, 360);

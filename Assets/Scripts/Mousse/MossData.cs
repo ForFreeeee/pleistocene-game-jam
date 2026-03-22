@@ -15,5 +15,6 @@ public class MossData : ScriptableObject
     public string NameKey;
     public string ShortDescriptionKey;
     public string DetailedKey;
-    public Sprite sprite;
+    public Sprite spritePhoto;
+    public Sprite spriteColor;
 }

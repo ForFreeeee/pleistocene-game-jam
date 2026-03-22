@@ -65,7 +65,7 @@ public class ExplainCanvas : MonoBehaviour
             localizedDetailed.RefreshString();
             DetailedText.text = localizedName.GetLocalizedString();
 
-            image.sprite = mossData.sprite;
+            image.sprite = mossData.spritePhoto;
         }
     }
 

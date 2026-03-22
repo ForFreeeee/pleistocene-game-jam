@@ -45,7 +45,7 @@ public class MossButtonUIManager : MonoBehaviour
         foreach (var moss in listMoss)
         {
             var button = Instantiate(mossButtonPrefab, toggleGroup.transform);
-            button.Init(moss.id,moss.sprite, changeSelectedMoss, changeHoverMoss);
+            button.Init(moss.id,moss.spriteColor, changeSelectedMoss, changeHoverMoss);
             button.UpdateLikeSunImage(DefaultSprite);
             button.UpdatePlaceToPlace(DefaultSprite);
             buttonList.Add(moss.id,button);

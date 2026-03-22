@@ -72,37 +72,20 @@ public class MossShooter : MonoBehaviour
                 if (moss_coverable == null)
                     return;
                 Debug.Log("Got a hit");
-                GenerateMoss(hit);
+                GenerateMoss(hit, hit.collider.gameObject);
             }
             m_currentDelay = m_setDelayValue;
         }
     }
 
-<<<<<<< HEAD
     void GenerateMoss(RaycastHit hit, GameObject hit_object) {
        Vector3 hitpoint = hit.point;
-=======
-    void GenerateMoss(RaycastHit hit) {
-        Vector3 hitpoint = hit.point;
->>>>>>> d720dbfa92a28ca5e90ca25e433b920e376b4689
         Vector3 normal = hit.normal;
         Debug.Log(hit.normal);
         GameObject parentMoss = Instantiate(m_parentMoss, hitpoint, Quaternion.identity);
         //GenerateRandomSubMoss(normal, childMoss);
         parentMoss.transform.localScale = m_mossScale;
         //Debug.Log(childMoss.transform.up);
-<<<<<<< HEAD
-        childMoss.transform.Translate(hit.normal * Random.Range(-0.03f, 0.0f));
-        childMoss.transform.rotation = Quaternion.FromToRotation(childMoss.transform.up, hit.normal);
-        childMoss.transform.Rotate(new Vector3(0, Random.Range(0, 360), 0));
-        //childMoss.transform.rotation.SetLookRotation(hit.normal);
-        m_childMoss.Add(childMoss);
-
-        // Second part removing layer to make moss appear
-        MossCoverable moss_coverable = hit.collider.gameObject.GetComponent<MossCoverable>();
-            if (moss_coverable != null)    
-                moss_coverable.AddMoss(hit.point, hit.textureCoord);
-=======
         parentMoss.transform.rotation = Quaternion.FromToRotation(parentMoss.transform.up, hit.normal); 
         //childMoss.transform.rotation.SetLookRotation(hit.normal);
         m_ParentMossObjects.Add(parentMoss);    
@@ -134,6 +117,5 @@ public class MossShooter : MonoBehaviour
             childMoss.transform.RotateAround(childMoss.transform.position, forward, angleZ);
             childMoss.transform.SetParent(parentMoss.transform, worldPositionStays: true);
         }  
->>>>>>> d720dbfa92a28ca5e90ca25e433b920e376b4689
     }
 }

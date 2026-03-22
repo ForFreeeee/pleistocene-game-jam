@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
+using UnityEngine.UI;
 
 public class ExplainCanvas : MonoBehaviour
 {
@@ -11,11 +12,18 @@ public class ExplainCanvas : MonoBehaviour
     TextMeshProUGUI NameText;
 
     [SerializeField]
+    TextMeshProUGUI ShortDescriptionText;
+
+    [SerializeField]
     TextMeshProUGUI DetailedText;
+
+    [SerializeField]
+    Image image;
 
 
     LocalizedString localizedName;
     LocalizedString localizedDetailed;
+    LocalizedString localizedShortDescription;
 
     const string tableRefName = "Ui-trad";
 
@@ -25,9 +33,14 @@ public class ExplainCanvas : MonoBehaviour
         localizedName.TableReference = tableRefName;
         localizedName.StringChanged += ValueNameChanged;
 
+        localizedShortDescription = new LocalizedString();
+        localizedShortDescription.TableReference = tableRefName;
+        localizedShortDescription.StringChanged += ValueShortDescriptionChanged;
+
         localizedDetailed = new LocalizedString();
         localizedDetailed.TableReference = tableRefName;
         localizedDetailed.StringChanged += ValueDetailedChanged;
+
     }
 
 
@@ -44,9 +57,15 @@ public class ExplainCanvas : MonoBehaviour
             localizedName.RefreshString();
             NameText.text = localizedName.GetLocalizedString();
 
+            localizedShortDescription.TableEntryReference = mossData.ShortDescriptionKey;
+            localizedShortDescription.RefreshString();
+            ShortDescriptionText.text = localizedShortDescription.GetLocalizedString();
+
             localizedDetailed.TableEntryReference = mossData.DetailedKey;
             localizedDetailed.RefreshString();
             DetailedText.text = localizedName.GetLocalizedString();
+
+            image.sprite = mossData.sprite;
         }
     }
 
@@ -60,6 +79,11 @@ public class ExplainCanvas : MonoBehaviour
     void ValueNameChanged(string value)
     {
         NameText.text = value;
+    }
+
+    void ValueShortDescriptionChanged(string value)
+    {
+        ShortDescriptionText.text = value;
     }
 
     void ValueDetailedChanged(string value)

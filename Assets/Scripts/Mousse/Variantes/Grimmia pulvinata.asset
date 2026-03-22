@@ -20,6 +20,7 @@ MonoBehaviour:
   LikesRock: 1
   LikesGround: 0
   finalGrowthSize: {x: 1.5, y: 3, z: 1.5}
-  NameKey: GrimmiaPulvinata
+  NameKey: GrimmiaPulvinataName
+  ShortDescriptionKey: GrimmiaPulvinata
   DetailedKey: GrimmiaPulvinataDetailed
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: d66e7ebcb45d75845af3fc106e9bc00c, type: 3}

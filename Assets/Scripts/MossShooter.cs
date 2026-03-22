@@ -147,4 +147,9 @@ public class MossShooter : MonoBehaviour
             childMoss.transform.SetParent(parentMoss.transform, worldPositionStays: true);
         }  
     }
+
+    public int GetMossAmount()
+    {
+        return m_ParentMossObjects.Count;
+    }
 }

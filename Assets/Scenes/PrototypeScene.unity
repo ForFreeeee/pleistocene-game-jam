@@ -416,10 +416,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdd55a34fb05204bb480d771329f577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MossShooter
-  m_moss: {fileID: 3812012402024367943, guid: c87d71c9fe6d8d346966440ba4232dfc, type: 3}
-  m_mossRadius: 1
-  m_mossDensity: 1
   m_mossScale: {x: 1, y: 1, z: 1}
+  m_currentMoss: {fileID: 11400000, guid: 43c2cdc435752c14a8f739ea48722245, type: 2}
   m_camera: {fileID: 474414754}
   m_setDelayValue: 0.5
 --- !u!4 &1684978078

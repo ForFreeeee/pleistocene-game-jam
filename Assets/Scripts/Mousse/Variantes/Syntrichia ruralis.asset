@@ -19,8 +19,15 @@ MonoBehaviour:
   LikesSun: 1
   LikesRock: 0
   LikesGround: 1
-  finalGrowthSize: {x: 1.5, y: 3, z: 1.5}
+  finalGrowthSize: {x: 0.02, y: 0.04, z: 0.02}
+  mossRadius: 0.2
+  mossRadiusShift: 0.08
+  mossAngleVariation: 20
+  mossDensity: 30
+  mossDensityVariation: 5
   NameKey: SyntrichiaRuralis
   ShortDescriptionKey: SyntrichiaRuralisName
   DetailedKey: SyntrichiaRuralisDetailed
   sprite: {fileID: 21300000, guid: d66e7ebcb45d75845af3fc106e9bc00c, type: 3}
+  parentMossPrefab: {fileID: 3812012402024367943, guid: ac477d455a6fa254eb52c6d5ff66dc7f, type: 3}
+  childMossPrefab: {fileID: 5842645654216866712, guid: 575c677cdf0efeb42bf4c71b9452cd54, type: 3}

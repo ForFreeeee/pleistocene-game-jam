@@ -61,7 +61,7 @@ public class MossShooter : MonoBehaviour
     {
         m_currentDelay -= Time.deltaTime;
         Vector2 val = Mouse.current.position.ReadValue();
-        Debug.Log(val);
+        //Debug.Log(val);
 
         if (m_currentDelay < 0 && m_isSpraying)
         {
@@ -120,10 +120,11 @@ public class MossShooter : MonoBehaviour
             float radius = Random.Range(m_currentMoss.mossRadius-m_currentMoss.mossRadiusShift, m_currentMoss.mossRadius+(m_currentMoss.mossRadiusShift/2));  
             Vector3 offset=radius * (Mathf.Cos(randomAngle) * right + Mathf.Sin(randomAngle) * forward);
             GameObject childMoss = Instantiate(m_currentMoss.childMossPrefab, parentMoss.transform.position+offset, parentMoss.transform.rotation);
-            
-            float angleZ = Random.Range(parentMoss.transform.eulerAngles.z-m_currentMoss.mossAngleVariation, parentMoss.transform.eulerAngles.z + m_currentMoss.mossAngleVariation);
-            float angleX = Random.Range(parentMoss.transform.eulerAngles.x-m_currentMoss.mossAngleVariation, parentMoss.transform.eulerAngles.x + m_currentMoss.mossAngleVariation);
+            Debug.Log(parentMoss.transform.eulerAngles);
+            float angleZ = Random.Range(-m_currentMoss.mossAngleVariation, m_currentMoss.mossAngleVariation);
+            float angleX = Random.Range(-m_currentMoss.mossAngleVariation, m_currentMoss.mossAngleVariation);
             float angleY = Random.Range(0, 360);
+            Debug.Log("angleX: "+angleX+" angleY: "+angleY+" angleZ: "+angleZ);
             childMoss.transform.RotateAround(childMoss.transform.position, up, angleY);
             childMoss.transform.RotateAround(childMoss.transform.position, right, angleX);
             childMoss.transform.RotateAround(childMoss.transform.position, forward, angleZ);

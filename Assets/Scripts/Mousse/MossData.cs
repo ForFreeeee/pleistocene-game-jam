@@ -10,8 +10,10 @@ public class MossData : ScriptableObject
    public bool LikesSun;
    public bool LikesRock;
    public bool LikesGround;
+   public Vector3 finalGrowthSize;
 
     public string NameKey;
+    public string ShortDescriptionKey;
     public string DetailedKey;
     public Sprite sprite;
 }

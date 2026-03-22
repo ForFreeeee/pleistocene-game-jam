@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b4cbf2f1640c94ea34e3b8d3d4c7fc, type: 3}
   m_Name: Ptychostomum capillaire
   m_EditorClassIdentifier: Assembly-CSharp::MossData
-  id: 0
+  id: 3
   GrowthTime: 0
   DecayTime: 0
   LikesWater: 0
   LikesSun: 0
   LikesRock: 0
   LikesGround: 1
+  finalGrowthSize: {x: 1.5, y: 3, z: 1.5}
   NameKey: PtychostomumCapillaire
   DetailedKey: PtychostomumCapillaireDetailed
   sprite: {fileID: 0}

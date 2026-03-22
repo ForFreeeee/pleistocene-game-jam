@@ -28,6 +28,10 @@ namespace GameDev.Moss.States
             float t=1-(growthTimer/moss.MossData.GrowthTime);
             growthTimer-=Time.deltaTime;
             moss.transform.localScale=Vector3.Lerp(moss.transform.localScale, moss.MossData.finalGrowthSize, t);
+            for(int i=0; i<moss.transform.childCount; i++)
+            {
+                moss.transform.GetChild(i).localScale=Vector3.one;
+            }
             if (growthTimer <= 0)
             {
                 moss.MossStateMachine.TransitionTo(moss.MossStateMachine.matureState);

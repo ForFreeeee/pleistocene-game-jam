@@ -19,8 +19,15 @@ MonoBehaviour:
   LikesSun: 0
   LikesRock: 1
   LikesGround: 0
-  finalGrowthSize: {x: 1.5, y: 3, z: 1.5}
+  finalGrowthSize: {x: 0.02, y: 0.04, z: 0.02}
+  mossRadius: 0.2
+  mossRadiusShift: 0.08
+  mossAngleVariation: 20
+  mossDensity: 30
+  mossDensityVariation: 5
   NameKey: TortulaMuralisName
   ShortDescriptionKey: TortulaMuralis
   DetailedKey: TortulaMuralisDetailed
   sprite: {fileID: 21300000, guid: d66e7ebcb45d75845af3fc106e9bc00c, type: 3}
+  parentMossPrefab: {fileID: 3812012402024367943, guid: c87d71c9fe6d8d346966440ba4232dfc, type: 3}
+  childMossPrefab: {fileID: 7918888762527908689, guid: ef8da434909e30541b465375e13d690f, type: 3}

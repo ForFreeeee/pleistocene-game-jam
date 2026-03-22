@@ -19,6 +19,7 @@ MonoBehaviour:
   LikesSun: 1
   LikesRock: 0
   LikesGround: 0
+  finalGrowthSize: {x: 1.5, y: 3, z: 1.5}
   NameKey: AmblystegiumSerpens
   DetailedKey: AmblystegiumSerpensDetailed
   sprite: {fileID: 0}

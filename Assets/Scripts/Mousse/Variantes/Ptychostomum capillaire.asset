@@ -19,6 +19,7 @@ MonoBehaviour:
   LikesSun: 0
   LikesRock: 0
   LikesGround: 1
+  finalGrowthSize: {x: 1.5, y: 3, z: 1.5}
   NameKey: PtychostomumCapillaire
   DetailedKey: PtychostomumCapillaireDetailed
   sprite: {fileID: 0}

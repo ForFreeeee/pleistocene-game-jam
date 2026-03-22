@@ -122,12 +122,12 @@ MonoBehaviour:
   toggleGroup: {fileID: 8988163820998845243}
   explainCanvas: {fileID: 2044247056082130302}
   mossButtonPrefab: {fileID: 7291949547896493292, guid: 89b0464cf7f839b44be49cae20c0e031, type: 3}
-  DefaultSprite: {fileID: 0}
-  likeSunSprite: {fileID: 0}
-  notLikeSunSprite: {fileID: 0}
-  rockSprite: {fileID: 0}
-  groundSprite: {fileID: 0}
-  waterSprite: {fileID: 0}
+  DefaultSprite: {fileID: 21300000, guid: 906d7c9c13362a64d9b81509407d29a4, type: 3}
+  likeSunSprite: {fileID: 21300000, guid: 448a4d51731a58a44ab72cfba4638f7d, type: 3}
+  notLikeSunSprite: {fileID: 21300000, guid: ddf10de71f7815543a6ccae5d3ef1a4d, type: 3}
+  rockSprite: {fileID: 21300000, guid: 931c1bba4f62aa74a9a5b34864f77d7d, type: 3}
+  groundSprite: {fileID: 21300000, guid: 0aa11ca7c013ca5418916b4d950d365b, type: 3}
+  waterSprite: {fileID: 21300000, guid: 2935f5b5c5de7f14aabc45c21c2bd89e, type: 3}
   endGameScreen: {fileID: 3758296853338232632}
 --- !u!1001 &144087968918795337
 PrefabInstance:

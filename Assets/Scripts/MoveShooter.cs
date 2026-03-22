@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
@@ -16,21 +17,15 @@ public class MoveShooter : MonoBehaviour
     float speed;
 
     [SerializeField]
-    float m_setDelayValue;
-    float m_currentDelay;
+    float delay;
 
-    void Update()
+    bool isStart = false;
+
+    private void Update()
     {
-        m_currentDelay -= Time.deltaTime;
-
-    }
-
-    public void OnShoot(InputAction.CallbackContext context)
-    {
-        if (m_currentDelay < 0)
+        if (Mouse.current.middleButton.IsPressed())
         {
             Vector2 val = Mouse.current.position.ReadValue();
-            Debug.Log("Clicked detected Move");
             cameraRotate.transform.RotateAround(focusGO.transform.position,
                                                 cameraRotate.transform.up,
                                                 -val.x * speed);
@@ -39,8 +34,36 @@ public class MoveShooter : MonoBehaviour
                                             cameraRotate.transform.right,
                                             -val.y * speed);
         }
-            
+        
 
-        m_currentDelay = m_setDelayValue;
+        //TO update better if we have time
+        /*if (Mouse.current.middleButton.IsPressed() && !isStart)
+        {
+            isStart = true;
+            StartCoroutine(MoveArround());
+        }
+        else if ( isStart)
+        {
+            StopCoroutine(MoveArround());
+            isStart = false;
+
+        }*/
+    }
+
+    IEnumerator MoveArround()
+    {
+        while (isStart)
+        {
+            Vector2 val = Mouse.current.position.ReadValue();
+            cameraRotate.transform.RotateAround(focusGO.transform.position,
+                                                cameraRotate.transform.up,
+                                                -val.x * speed);
+
+            cameraRotate.transform.RotateAround(focusGO.transform.position,
+                                            cameraRotate.transform.right,
+                                            -val.y * speed);
+
+            yield return new WaitForSeconds(delay);
+        }
     }
 }

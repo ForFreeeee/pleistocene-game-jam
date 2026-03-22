@@ -89,9 +89,9 @@
                 },
                 {
                     "name": "MoveArround",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "3506db14-9039-42aa-8f25-84e029526e90",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -487,7 +487,7 @@
                     "name": "",
                     "id": "37eb12b1-5588-442b-9bfb-3ba053c42f37",
                     "path": "<Mouse>/middleButton",
-                    "interactions": "",
+                    "interactions": "Hold(duration=1000,pressPoint=0.2)",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "MoveArround",

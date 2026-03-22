@@ -255,8 +255,8 @@ MonoBehaviour:
     m_ActionId: 3506db14-9039-42aa-8f25-84e029526e90
     m_ActionName: 'Player/MoveArround[/Mouse/middleButton]'
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &489322077
@@ -273,8 +273,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MoveShooter
   cameraRotate: {fileID: 685859590}
   focusGO: {fileID: 1277216318}
-  speed: 0.2
-  m_setDelayValue: 1
+  speed: 0.001
+  delay: 0.1
 --- !u!4 &489322078
 Transform:
   m_ObjectHideFlags: 0

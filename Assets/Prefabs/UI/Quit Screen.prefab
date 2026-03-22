@@ -104,10 +104,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 4567617488358734201}
   - {fileID: 3446493176563993002}
   - {fileID: 7870011752631638112}
   - {fileID: 5660080778653874384}
-  - {fileID: 4567617488358734201}
   m_Father: {fileID: 4095384942740422381}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -364,6 +364,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8001171755910248887, guid: 244ff4dbfabc0774985a1440dc9c92cf, type: 3}
+      propertyPath: m_fontSize
+      value: 24.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8001171755910248887, guid: 244ff4dbfabc0774985a1440dc9c92cf, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 8565199485881015097, guid: c9db1b82f76906f4a846141acb678424, type: 2}
@@ -504,6 +508,10 @@ PrefabInstance:
     - target: {fileID: 6664361649083964267, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_Name
       value: Text Localized
+      objectReference: {fileID: 0}
+    - target: {fileID: 7889793767084041544, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
+      propertyPath: m_fontSize
+      value: 52.65
       objectReference: {fileID: 0}
     - target: {fileID: 7889793767084041544, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_sharedMaterial
@@ -654,6 +662,10 @@ PrefabInstance:
     - target: {fileID: 7900960692736927257, guid: 244ff4dbfabc0774985a1440dc9c92cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8001171755910248887, guid: 244ff4dbfabc0774985a1440dc9c92cf, type: 3}
+      propertyPath: m_fontSize
+      value: 24.75
       objectReference: {fileID: 0}
     - target: {fileID: 8001171755910248887, guid: 244ff4dbfabc0774985a1440dc9c92cf, type: 3}
       propertyPath: m_sharedMaterial

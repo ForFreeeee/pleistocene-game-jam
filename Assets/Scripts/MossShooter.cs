@@ -110,12 +110,12 @@ public class MossShooter : MonoBehaviour
         EventDescription ed;
         for (int i = 0; i < emitters_array.Length; i++)
         {
-            m_emitters.Add(emitters_array[i].EventReference.Path, emitters_array[i]);
+            //m_emitters.Add(emitters_array[i].EventReference.Path, emitters_array[i]);
         }
 
 
         //CreateEventInstance("MainTheme", m_mainTheme);
-        PlayEventInstance("event:/MainTheme");
+        //PlayEventInstance("event:/MainTheme");
         //CreateEventInstance("MossGrowth", m_mossGrowing);
         //SetParameter("event:/MossGrowth", "CanGrow", 1);
         //PlayEventInstance("event:/MossGrowth");
@@ -187,10 +187,8 @@ public class MossShooter : MonoBehaviour
     {
         UnityEngine.Debug.Log("Clicked detected");
         m_isSpraying = context.ReadValueAsButton();
-        if (m_isSpraying)
-            PlayEventInstance("event:/MossGrowth");
-        else
-            StopEventInstance("event:/MossGrowth");
+  
+  
     }
 
     void GenerateMoss(RaycastHit hit, GameObject hit_object) {

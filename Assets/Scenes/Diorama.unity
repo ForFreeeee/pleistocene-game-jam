@@ -5215,6 +5215,7 @@ GameObject:
   - component: {fileID: 760738914}
   - component: {fileID: 760738913}
   - component: {fileID: 760738912}
+  - component: {fileID: 760738916}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5340,6 +5341,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 15.131, y: 142.854, z: -5.014}
+--- !u!114 &760738916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760738911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &833533339
 GameObject:
   m_ObjectHideFlags: 0
@@ -5352,7 +5367,6 @@ GameObject:
   - component: {fileID: 833533341}
   - component: {fileID: 833533340}
   - component: {fileID: 833533344}
-  - component: {fileID: 833533345}
   m_Layer: 0
   m_Name: MossShooter
   m_TagString: Untagged
@@ -5564,7 +5578,7 @@ MonoBehaviour:
       Data4: -2073096973
     Path: event:/MainTheme
   Event: 
-  EventPlayTrigger: 0
+  EventPlayTrigger: 1
   EventStopTrigger: 2
   AllowFadeout: 1
   TriggerOnce: 0
@@ -5572,44 +5586,9 @@ MonoBehaviour:
   NonRigidbodyVelocity: 0
   Params:
   - Name: Completion
-    Value: 0
-  - Name: NbOfMosses
-    Value: 0
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
---- !u!114 &833533345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 833533339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -1191494082
-      Data2: 1231230234
-      Data3: -1313154151
-      Data4: 1305114013
-    Path: event:/MossGrowth
-  Event: 
-  EventPlayTrigger: 0
-  EventStopTrigger: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params:
-  - Name: CanGrow
     Value: 1
-  - Name: Ground
-    Value: 0
+  - Name: NbOfMosses
+    Value: 6
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
@@ -5665,6 +5644,10 @@ PrefabInstance:
       propertyPath: focusGO
       value: 
       objectReference: {fileID: 1965130332}
+    - target: {fileID: 1957908908321782041, guid: 85396cc7fcb3fef47807db4a4107088e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1957908908321782041, guid: 85396cc7fcb3fef47807db4a4107088e, type: 3}
       propertyPath: cameraRotate
       value: 

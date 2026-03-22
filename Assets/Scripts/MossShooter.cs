@@ -39,6 +39,11 @@ public class MossShooter : MonoBehaviour
 
     float m_currentDelay;
 
+    [SerializeField]
+    GameObject[] m_toBeCovered;
+    [SerializeField]
+    float[] m_neededToWin;
+    float[] m_coveredSurface;
 
     bool m_isSpraying;
 
@@ -47,6 +52,25 @@ public class MossShooter : MonoBehaviour
     {
         m_ParentMossObjects = new List<GameObject>();
         m_isSpraying = false;
+
+        m_coveredSurface = new float[m_toBeCovered.Length];
+        for (int i = 0; i < m_coveredSurface.Length; i++)
+            m_coveredSurface[i] = 0;
+    }
+
+    bool CheckWinCond()
+    {
+        for (int i = 0; i < m_coveredSurface.Length; i++)
+        {
+            if (m_coveredSurface[i] < m_neededToWin[i])
+                return false;
+        }
+        return true;
+    }
+
+    void UpdateCoveredSurface(float coveredSurface, GameObject gameObject)
+    {
+        
     }
 
     // Update is called once per frame
@@ -70,7 +94,7 @@ public class MossShooter : MonoBehaviour
                     return;
                 Debug.Log("Got a hit");
                 GenerateMoss(hit, hit.collider.gameObject);
-                moss_coverable.AddMoss(hit.point, hit.textureCoord);
+                float covered_surface = moss_coverable.AddMoss(hit.point, hit.textureCoord);
             }
             m_currentDelay = m_setDelayValue;
         }

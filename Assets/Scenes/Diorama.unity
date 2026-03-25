@@ -5108,6 +5108,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5316769034508709804, guid: 3bbd7e0680df44b429bb871fd72c434a, type: 3}
+      propertyPath: m_fontSize
+      value: 27.65
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5660,7 +5664,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManageur
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8499292204147784862, guid: 85396cc7fcb3fef47807db4a4107088e, type: 3}
+      propertyPath: focusGO
+      value: 
+      objectReference: {fileID: 1965130332}
+    - target: {fileID: 8499292204147784862, guid: 85396cc7fcb3fef47807db4a4107088e, type: 3}
+      propertyPath: cameraRotate
+      value: 
+      objectReference: {fileID: 760738914}
+    m_RemovedComponents:
+    - {fileID: 1957908908321782041, guid: 85396cc7fcb3fef47807db4a4107088e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 751626497367618685}
   - component: {fileID: 5524592208145225883}
-  - component: {fileID: 1957908908321782041}
+  - component: {fileID: 8499292204147784862}
   m_Layer: 0
   m_Name: GameManageur
   m_TagString: Untagged
@@ -53,7 +53,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 646f8933544f901449d558cb2c33f884, type: 2}
   - {fileID: 11400000, guid: fc6d662cc842690409d37ceb3b137101, type: 2}
   mossButtonUIManager: {fileID: 0}
---- !u!114 &1957908908321782041
+--- !u!114 &8499292204147784862
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62,10 +62,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6527862834321334584}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cd6ca2b87714da4fb3568c7399270a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 895ef0c22b3760b45b5ddc97be2298e0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MoveShooter
+  m_EditorClassIdentifier: Assembly-CSharp::MoveManager
   cameraRotate: {fileID: 0}
   focusGO: {fileID: 0}
-  speed: 0.001
-  delay: 0.1
+  speed: 0.002

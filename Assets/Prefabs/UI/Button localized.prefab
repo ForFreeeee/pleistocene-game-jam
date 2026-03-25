@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4176454636842537103}
   - component: {fileID: 6072108197685044853}
   - component: {fileID: 6800430238506180507}
+  - component: {fileID: 4521372162957348783}
   m_Layer: 5
   m_Name: Button localized
   m_TagString: Untagged
@@ -69,7 +70,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e68e77bf6801b804f800c8e4b37e1ef3, type: 3}
+  m_Sprite: {fileID: 1711214625, guid: ef38149d2d5ecb745a84a3364f55bab0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -98,7 +99,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 3
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -185,6 +186,28 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!95 &4521372162957348783
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589412156636342592}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2a477419d4fcf76409b5da19ceb9b8aa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &177877827201899775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -219,11 +242,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3089273491169776244, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -23.5822
       objectReference: {fileID: 0}
     - target: {fileID: 3089273491169776244, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -19.2888
       objectReference: {fileID: 0}
     - target: {fileID: 3089273491169776244, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -259,7 +282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3089273491169776244, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -0.54579926
       objectReference: {fileID: 0}
     - target: {fileID: 3089273491169776244, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -276,6 +299,10 @@ PrefabInstance:
     - target: {fileID: 6664361649083964267, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_Name
       value: Text Localized
+      objectReference: {fileID: 0}
+    - target: {fileID: 7889793767084041544, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
+      propertyPath: m_fontSize
+      value: 27.65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

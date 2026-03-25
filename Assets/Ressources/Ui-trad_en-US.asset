@@ -103,27 +103,27 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 329898579726336
-    m_Localized: SyntrichiaRuralis
+    m_Localized: Syntrichia Ruralis
     m_Metadata:
       m_Items: []
   - m_Id: 329993161281536
-    m_Localized: PtychostomumCapillaire
+    m_Localized: Ptychostomum Capillaire
     m_Metadata:
       m_Items: []
   - m_Id: 330050287702016
-    m_Localized: GrimmiaPulvinata
+    m_Localized: Grimmia Pulvinata
     m_Metadata:
       m_Items: []
   - m_Id: 330111751032832
-    m_Localized: TortulaMuralis
+    m_Localized: Tortula Muralis
     m_Metadata:
       m_Items: []
   - m_Id: 330168336388096
-    m_Localized: AmblystegiumSerpens
+    m_Localized: Amblystegium Serpens
     m_Metadata:
       m_Items: []
   - m_Id: 330226423304192
-    m_Localized: HypnumCupressiforme
+    m_Localized: Hypnum Cupressiforme
     m_Metadata:
       m_Items: []
   references:

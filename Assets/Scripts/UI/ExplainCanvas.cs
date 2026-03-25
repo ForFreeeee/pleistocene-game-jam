@@ -20,6 +20,9 @@ public class ExplainCanvas : MonoBehaviour
     [SerializeField]
     Image image;
 
+    [SerializeField]
+    Animator animator;
+
 
     LocalizedString localizedName;
     LocalizedString localizedDetailed;
@@ -44,7 +47,7 @@ public class ExplainCanvas : MonoBehaviour
     }
 
 
-    public void UpdateMossData(MossData? mossData)
+    public void UpdateMossData(MossData mossData)
     {
         if (mossData == null)
         {
@@ -68,9 +71,7 @@ public class ExplainCanvas : MonoBehaviour
 
     private void Show( bool show)
     {
-        //anim here todo
-        content.SetActive(show);
-
+        animator.SetBool("show", show);
     }
 
     void ValueNameChanged(string value)

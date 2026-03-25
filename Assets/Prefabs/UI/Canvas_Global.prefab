@@ -298,10 +298,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1372503259926330183}
-    - target: {fileID: 3409283459075955511, guid: 2ec1293c32365d74e8f667636dc04368, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1372503259926330183}
     - target: {fileID: 5597800490953377714, guid: 2ec1293c32365d74e8f667636dc04368, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -385,10 +381,6 @@ PrefabInstance:
     - target: {fileID: 6061135735554502691, guid: 2ec1293c32365d74e8f667636dc04368, type: 3}
       propertyPath: m_Name
       value: StartScreen
-      objectReference: {fileID: 0}
-    - target: {fileID: 6061135735554502691, guid: 2ec1293c32365d74e8f667636dc04368, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

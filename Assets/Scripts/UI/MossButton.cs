@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class MossButton : MonoBehaviour
+public class MossButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public int id;
     [SerializeField]
@@ -18,6 +18,8 @@ public class MossButton : MonoBehaviour
     [SerializeField]
     Image imagePlaceToPlace;
 
+    Action<int> changeHoverMoss;
+
     public void Init(int id, Sprite sprite, Action changeSelectedMoss, Action<int> changeHoverMoss)
     {
         this.id = id;
@@ -28,17 +30,7 @@ public class MossButton : MonoBehaviour
             changeSelectedMoss();});
 
         //Hover event
-        EventTrigger trigger = toggle.GetComponentInParent<EventTrigger>();
-
-        if (trigger == null) trigger = toggle.gameObject.AddComponent<EventTrigger>();
-
-        EventTrigger.Entry entry = new EventTrigger.Entry();
-
-        entry.eventID = EventTriggerType.PointerEnter;
-
-        entry.callback.AddListener((eventData) => { changeHoverMoss(id); });
-
-        trigger.triggers.Add(entry);
+        this.changeHoverMoss = changeHoverMoss;
     }
 
     public void UpdateLikeSunImage(Sprite newSprite)
@@ -49,5 +41,15 @@ public class MossButton : MonoBehaviour
     public void UpdatePlaceToPlace(Sprite newSprite)
     {
         imagePlaceToPlace.sprite = newSprite;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        changeHoverMoss(id);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        changeHoverMoss(-1);
     }
 }

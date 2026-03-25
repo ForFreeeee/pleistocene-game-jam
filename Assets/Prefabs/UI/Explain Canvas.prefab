@@ -197,6 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 282247354284824793}
   - component: {fileID: 9035279526864691959}
+  - component: {fileID: 6675837775106878085}
   m_Layer: 5
   m_Name: Explain Canvas
   m_TagString: Untagged
@@ -241,6 +242,29 @@ MonoBehaviour:
   ShortDescriptionText: {fileID: 4721400481427261545}
   DetailedText: {fileID: 6130295218059140356}
   image: {fileID: 8831291582667036094}
+  animator: {fileID: 6675837775106878085}
+--- !u!95 &6675837775106878085
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4498718664444546495}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 31560ecc59393584ea930893ebd5146c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4995281400023515981
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,7 +369,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PtychostomumCapillaire
+  m_text: Ptychostomum Capillaire
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 428586ba67423604092bfbb7922556c5, type: 2}
   m_sharedMaterial: {fileID: -2891610112143961466, guid: 428586ba67423604092bfbb7922556c5, type: 2}
@@ -372,8 +396,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 8
@@ -433,7 +457,7 @@ MonoBehaviour:
   m_MinWidth: -1
   m_MinHeight: -1
   m_PreferredWidth: -1
-  m_PreferredHeight: 36
+  m_PreferredHeight: 42
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1

@@ -428,6 +428,10 @@ PrefabInstance:
       propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
       value: GUID:1ecb82d894e13f9488f56ed2d6617a22
       objectReference: {fileID: 0}
+    - target: {fileID: 2929801768889814667, guid: 244ff4dbfabc0774985a1440dc9c92cf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.54579926
+      objectReference: {fileID: 0}
     - target: {fileID: 4176454636842537103, guid: 244ff4dbfabc0774985a1440dc9c92cf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -479,10 +483,6 @@ PrefabInstance:
     - target: {fileID: 4176454636842537103, guid: 244ff4dbfabc0774985a1440dc9c92cf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4487847024829900969, guid: 244ff4dbfabc0774985a1440dc9c92cf, type: 3}
-      propertyPath: m_Color.a
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7900960692736927257, guid: 244ff4dbfabc0774985a1440dc9c92cf, type: 3}
       propertyPath: m_Pivot.x
@@ -566,11 +566,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8001171755910248887, guid: 244ff4dbfabc0774985a1440dc9c92cf, type: 3}
       propertyPath: m_text
-      value: 
+      value: Loading ...
       objectReference: {fileID: 0}
     - target: {fileID: 8001171755910248887, guid: 244ff4dbfabc0774985a1440dc9c92cf, type: 3}
       propertyPath: m_fontSize
-      value: 32
+      value: 34.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

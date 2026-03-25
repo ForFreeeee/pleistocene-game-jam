@@ -69,8 +69,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e68e77bf6801b804f800c8e4b37e1ef3, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 95de01b7764e61a4b94fb63d3edda089, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -219,11 +219,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3089273491169776244, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -10.1902
       objectReference: {fileID: 0}
     - target: {fileID: 3089273491169776244, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -10.7666
       objectReference: {fileID: 0}
     - target: {fileID: 3089273491169776244, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -259,7 +259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3089273491169776244, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -0.5458002
       objectReference: {fileID: 0}
     - target: {fileID: 3089273491169776244, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -276,6 +276,10 @@ PrefabInstance:
     - target: {fileID: 6664361649083964267, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
       propertyPath: m_Name
       value: Text Localized
+      objectReference: {fileID: 0}
+    - target: {fileID: 7889793767084041544, guid: f0abe6cff0c8c3744bf364e3ec754dcd, type: 3}
+      propertyPath: m_fontSize
+      value: 15.85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

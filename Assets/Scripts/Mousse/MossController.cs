@@ -4,7 +4,12 @@ using UnityEngine;
 public class MossController : MonoBehaviour
 {
     public MossStateMachine MossStateMachine;
-    public MossData MossData;
+   public MossCoverable moss_coverable;
+    public Vector3 hitPoint;
+    public Vector2 textureCoord;
+     public MossData MossData;
+    public GameObject directionalLight;
+    public MossManageur gameManageur;
 
     [SerializeField]
     private bool willDie;
@@ -29,9 +34,34 @@ public class MossController : MonoBehaviour
         MossStateMachine.PhysicsUpdate();
     }
     
-    public void AnticipateDeath()
-    {
-        willDie=true;
+public void ShouldMossLive(string hitTag)
+     {
+        willDie=false;
+        Ray ray = new Ray(transform.position, directionalLight.transform.position - transform.position);
+        RaycastHit hit;
+        bool hitSun = Physics.Raycast(ray, out hit);
+        //Debug.Log(hit.point);
+        Debug.DrawRay(ray.origin, ray.direction * 100, Color.red, 3.0f);
+        if ( hitSun && !MossData.LikesSun || !hitSun && MossData.LikesSun)
+        {
+            Debug.Log("Can't place moss here, No direct sunlight");
+            willDie=true;
+        }
+        if(MossData.LikesGround && hitTag!="Ground")
+        {
+            Debug.Log("Can't place moss here, Need ground");
+            willDie=true;
+        }
+        if(MossData.LikesWater && hitTag!="Water")
+        {
+            Debug.Log("Can't place moss here, Need water");
+            willDie=true;   
+        }
+        if(MossData.LikesRock && hitTag!="Rock")
+        {
+            Debug.Log("Can't place moss here, Need rock");
+            willDie=true;
+        }
     }
 
     public bool mustDie()

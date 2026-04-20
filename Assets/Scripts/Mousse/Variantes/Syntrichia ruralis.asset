@@ -25,3 +25,5 @@ MonoBehaviour:
   DetailedKey: SyntrichiaRuralisDetailed
   spritePhoto: {fileID: 21300000, guid: 725c203f64ca90442be5c280634b83b2, type: 3}
   spriteColor: {fileID: 21300000, guid: 4e778581260e4294f823a39da78d1570, type: 3}
+  parentMossPrefab: {fileID: 1286625888222039658, guid: 0b2c325b45f08b747978fd075c563e0b, type: 3}
+  childMossPrefab: {fileID: 1286625888222039658, guid: 4d003780c6b017b42b6585b91107a15d, type: 3}

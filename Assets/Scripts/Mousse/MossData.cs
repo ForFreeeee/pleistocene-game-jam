@@ -17,4 +17,6 @@ public class MossData : ScriptableObject
     public string DetailedKey;
     public Sprite spritePhoto;
     public Sprite spriteColor;
+    public GameObject parentMossPrefab;
+    public GameObject childMossPrefab;
 }

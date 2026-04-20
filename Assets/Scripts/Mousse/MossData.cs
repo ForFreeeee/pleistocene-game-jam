@@ -19,4 +19,10 @@ public class MossData : ScriptableObject
     public Sprite spriteColor;
     public GameObject parentMossPrefab;
     public GameObject childMossPrefab;
+
+    public float mossRadius;
+    public float mossRadiusShift;
+    public float mossAngleVariation;
+    public int mossDensity;
+    public float mossDensityVariation;
 }

@@ -27,3 +27,8 @@ MonoBehaviour:
   spriteColor: {fileID: 21300000, guid: eb62fe408c40316459ff14bc2929eb0d, type: 3}
   parentMossPrefab: {fileID: 1286625888222039658, guid: 4c55a08a3e77cf54d81939125354ded5, type: 3}
   childMossPrefab: {fileID: 1286625888222039658, guid: 5f3ed8d107a476e4f8c16e33fa1fd88c, type: 3}
+  mossRadius: 0.2
+  mossRadiusShift: 0.15
+  mossAngleVariation: 15
+  mossDensity: 30
+  mossDensityVariation: 5

@@ -8,6 +8,7 @@ TagManager:
   - OutOfBounds
   - Rock
   - Water
+  - Sun
   layers:
   - Default
   - TransparentFX

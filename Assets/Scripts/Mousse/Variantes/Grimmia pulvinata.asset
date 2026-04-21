@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Grimmia pulvinata
   m_EditorClassIdentifier: Assembly-CSharp::MossData
   id: 1
-  GrowthTime: 0
-  DecayTime: 0
+  GrowthTime: 1
+  DecayTime: 1
   LikesWater: 0
   LikesSun: 1
   LikesRock: 1

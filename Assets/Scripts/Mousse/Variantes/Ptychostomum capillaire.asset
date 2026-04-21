@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Ptychostomum capillaire
   m_EditorClassIdentifier: Assembly-CSharp::MossData
   id: 3
-  GrowthTime: 0
-  DecayTime: 0
+  GrowthTime: 1
+  DecayTime: 1
   LikesWater: 0
   LikesSun: 0
   LikesRock: 0

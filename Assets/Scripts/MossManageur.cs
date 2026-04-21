@@ -19,9 +19,14 @@ public class MossManageur : MonoBehaviour
 
     [SerializeField]
     int mossAmountWinCondition;
+
     [SerializeField]
-    float surfaceCoveredWinCondition;
-    public float surfaceCovered;
+    float[] m_neededToWin;
+    [SerializeField]
+    float[] m_coveredSurface;
+
+    [SerializeField]
+    GameObject[] m_toBeCovered;
 
     void Start()
     {
@@ -30,22 +35,48 @@ public class MossManageur : MonoBehaviour
         mossButtonUIManager.Init(mossList, ChangeSelectedMoss, ChangeHoverMoss);
 
         ChangeSelectedMoss();
-    }
 
-    void Update()
-    {
-        if(mossShooter.GetMossAmount() >= mossAmountWinCondition && surfaceCovered >= surfaceCoveredWinCondition)
-        {
-            LauchEndGame();
-        }
+        m_coveredSurface = new float[m_toBeCovered.Length];
+        for (int i = 0; i < m_coveredSurface.Length; i++)
+            m_coveredSurface[i] = 0;
     }
 
     void ChangeSelectedMoss()
     {
         selectedMossId = mossButtonUIManager.GetSelectedMooss();
-        Debug.Log(selectedMossId);
+        //Debug.Log(selectedMossId);
         SetSelectedMoss();
     }
+
+    bool CheckWinCond()
+    {
+        for (int i = 0; i < m_coveredSurface.Length; i++)
+        {
+            if (m_coveredSurface[i] < m_neededToWin[i])
+                return false;
+        }
+        return true;
+    }
+
+    public void UpdateCoveredSurface(float coveredSurface, GameObject gameObject)
+    {
+        for (int i = 0; i < m_toBeCovered.Length; i++)
+        {
+            if (m_toBeCovered[i] == gameObject)
+                m_coveredSurface[i] = coveredSurface;
+        }
+
+        float average_coverage = 0.0f;
+        for (int i = 0; i < m_coveredSurface.Length; i++)
+            average_coverage += m_coveredSurface[i];
+        average_coverage = average_coverage / m_coveredSurface.Length;
+        mossShooter.SetParameter("MainTheme", "Completion", average_coverage/100.0f);
+        if (CheckWinCond())
+        {
+            LaunchEndGame();   
+        }
+    }
+
 
      void SetSelectedMoss()
     {
@@ -70,7 +101,7 @@ public class MossManageur : MonoBehaviour
         mossButtonUIManager.UpdateLikeSunImageProperties(mossData);
     }
 
-    public void LauchEndGame()
+    public void LaunchEndGame()
     {
         mossButtonUIManager.ShowEndGameScreen();
     }

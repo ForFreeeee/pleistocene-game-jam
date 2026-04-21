@@ -85,10 +85,6 @@ public class MossShooter : MonoBehaviour
         m_ParentMossObjects = new List<GameObject>();
         m_isSpraying = false;
 
-        m_coveredSurface = new float[m_toBeCovered.Length];
-        for (int i = 0; i < m_coveredSurface.Length; i++)
-            m_coveredSurface[i] = 0;
-
         eventInstances = new Dictionary<string, EventInstance>();
 
         m_emitters = new Dictionary<string, StudioEventEmitter>();
@@ -105,31 +101,6 @@ public class MossShooter : MonoBehaviour
         //CreateEventInstance("MossGrowth", m_mossGrowing);
         //SetParameter("event:/MossGrowth", "CanGrow", 1);
         //PlayEventInstance("event:/MossGrowth");
-    }
-
-    bool CheckWinCond()
-    {
-        for (int i = 0; i < m_coveredSurface.Length; i++)
-        {
-            if (m_coveredSurface[i] < m_neededToWin[i])
-                return false;
-        }
-        return true;
-    }
-
-    void UpdateCoveredSurface(float coveredSurface, GameObject gameObject)
-    {
-        for (int i = 0; i < m_toBeCovered.Length; i++)
-        {
-            if (m_toBeCovered[i] == gameObject)
-                m_coveredSurface[i] = coveredSurface;
-        }
-
-        float average_coverage = 0.0f;
-        for (int i = 0; i < m_coveredSurface.Length; i++)
-            average_coverage += m_coveredSurface[i];
-        average_coverage = average_coverage / m_coveredSurface.Length;
-        SetParameter("MainTheme", "Completion", average_coverage/100.0f);
     }
 
     // Update is called once per frame
@@ -156,10 +127,6 @@ public class MossShooter : MonoBehaviour
                 
                 //SetParameter("MossGrowth", "CanGrow", 1);
                 GenerateMoss(hit, hit.collider.gameObject);
-                float covered_surface = moss_coverable.AddMoss(hit.point, hit.textureCoord);
-                UpdateCoveredSurface(covered_surface, hit.collider.gameObject);
-                if (CheckWinCond() == true)
-                    return; // insert code to finish game here
             } else
             {
                 //SetParameter("MossGrowth", "CanGrow", 0);
@@ -179,9 +146,7 @@ public class MossShooter : MonoBehaviour
 
     public void OnShoot(InputAction.CallbackContext context)
     {
-        m_isSpraying = context.ReadValueAsButton();
-  
-  
+        m_isSpraying = context.ReadValueAsButton();  
     }
 
     void GenerateMoss(RaycastHit hit, GameObject hit_object) {
@@ -191,6 +156,7 @@ public class MossShooter : MonoBehaviour
         MossController mossController=parentMoss.GetComponent<MossController>();
         mossController.hitPoint=hit.point;
         mossController.textureCoord=hit.textureCoord;
+        mossController.hitObject=hit_object;
         mossController.moss_coverable=hit_object.GetComponent<MossCoverable>();
         mossController.directionalLight=sceneLight;
         mossController.gameManageur=gameManager;

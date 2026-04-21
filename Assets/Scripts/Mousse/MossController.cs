@@ -7,9 +7,11 @@ public class MossController : MonoBehaviour
    public MossCoverable moss_coverable;
     public Vector3 hitPoint;
     public Vector2 textureCoord;
+    public GameObject hitObject;
      public MossData MossData;
     public GameObject directionalLight;
     public MossManageur gameManageur;
+    public MossCoverable mossCoverable;
 
     [SerializeField]
     private bool willDie;
@@ -39,12 +41,17 @@ public void ShouldMossLive(string hitTag)
         willDie=false;
         Ray ray = new Ray(transform.position, directionalLight.transform.position - transform.position);
         RaycastHit hit;
-        bool hitSun = Physics.Raycast(ray, out hit);
-        //Debug.Log(hit.point);
+        bool hitSun = Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag == "Sun";
+        Debug.Log(hit.point);
         Debug.DrawRay(ray.origin, ray.direction * 100, Color.red, 3.0f);
-        if ( hitSun && !MossData.LikesSun || !hitSun && MossData.LikesSun)
+        if (!hitSun && MossData.LikesSun)
         {
             Debug.Log("Can't place moss here, No direct sunlight");
+            willDie=true;
+        }
+        if (hitSun && !MossData.LikesSun)
+        {
+            Debug.Log("Can't place moss here, Too much sunlight");
             willDie=true;
         }
         if(MossData.LikesGround && hitTag!="Ground")

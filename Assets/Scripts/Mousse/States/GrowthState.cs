@@ -30,8 +30,8 @@ namespace GameDev.Moss.States
             moss.transform.localScale=Vector3.Lerp(moss.transform.localScale, moss.MossData.finalGrowthSize, t);
             if (growthTimer <= 0)
             {
-                float surfaceArea = moss.moss_coverable.AddMoss(moss.hitPoint, moss.textureCoord);
-                moss.gameManageur.surfaceCovered += surfaceArea;
+                float covered_surface = moss.moss_coverable.AddMoss(moss.hitPoint, moss.textureCoord);
+                moss.gameManageur.UpdateCoveredSurface(covered_surface, moss.hitObject);
                 moss.MossStateMachine.TransitionTo(moss.MossStateMachine.matureState);
                 return;
             }

@@ -4,6 +4,7 @@ using FMODUnity;
 using FMOD.Studio;
 using FMOD;
 using UnityEngine.InputSystem;
+using UnityEngine.SocialPlatforms;
 
 public class MossShooter : MonoBehaviour
 {
@@ -118,8 +119,8 @@ public class MossShooter : MonoBehaviour
             UnityEngine.Debug.DrawRay(r.origin, r.direction * 100, Color.red, 3.0f);
             if (Physics.Raycast(r, out hit))
             {
-                MossCoverable moss_coverable = hit.collider.gameObject.GetComponent<MossCoverable>();
-                if (moss_coverable == null || CanPlaceParentMoss(hit.collider.gameObject.tag) == false)
+                //UnityEngine.Debug.Log("Hit: " + hit.collider.gameObject.name);
+                if (CanPlaceParentMoss(hit.collider.gameObject.tag) == false)
                 {
                     //SetParameter("MossGrowth", "CanGrow", 0);
                     return;
@@ -157,7 +158,8 @@ public class MossShooter : MonoBehaviour
         mossController.hitPoint=hit.point;
         mossController.textureCoord=hit.textureCoord;
         mossController.hitObject=hit_object;
-        mossController.moss_coverable=hit_object.GetComponent<MossCoverable>();
+        MossCoverable moss_coverable;
+        mossController.mossCoverable= hit.collider.gameObject.TryGetComponent<MossCoverable>(out moss_coverable) ? moss_coverable : null;
         mossController.directionalLight=sceneLight;
         mossController.gameManageur=gameManager;
         parentMoss.transform.localScale = m_mossScale;
@@ -190,7 +192,11 @@ public class MossShooter : MonoBehaviour
             childMoss.transform.RotateAround(childMoss.transform.position, up, angleY);
             childMoss.transform.RotateAround(childMoss.transform.position, right, angleX);
             childMoss.transform.RotateAround(childMoss.transform.position, forward, angleZ);
+            Vector3 localScaleBeforeParent = childMoss.transform.localScale;
+            UnityEngine.Debug.Log("0 " + localScaleBeforeParent);
             childMoss.transform.SetParent(parentMoss.transform, worldPositionStays: true);
+            UnityEngine.Debug.Log("1 " + childMoss.transform.localScale);
+            childMoss.transform.localScale = localScaleBeforeParent;
         }  
     }
 

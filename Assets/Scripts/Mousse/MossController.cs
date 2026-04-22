@@ -4,7 +4,6 @@ using UnityEngine;
 public class MossController : MonoBehaviour
 {
     public MossStateMachine MossStateMachine;
-   public MossCoverable moss_coverable;
     public Vector3 hitPoint;
     public Vector2 textureCoord;
     public GameObject hitObject;
@@ -40,9 +39,13 @@ public void ShouldMossLive(string hitTag)
      {
         willDie=false;
         Ray ray = new Ray(transform.position, directionalLight.transform.position - transform.position);
-        RaycastHit hit;
-        bool hitSun = Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag == "Sun";
-        Debug.Log(hit.point);
+        RaycastHit[] hits = Physics.RaycastAll(ray);
+        bool hitSun = hits!= null && hits[0].collider.gameObject.tag == "Sun";
+        //Debug.Log(hitSun + " " + hits[0].collider.gameObject.name);
+        /*for (int i = 0; i < hits.Length; i++)
+        {
+            Debug.Log("Hit: " + hits[i].collider.gameObject.name);
+        }*/
         Debug.DrawRay(ray.origin, ray.direction * 100, Color.red, 3.0f);
         if (!hitSun && MossData.LikesSun)
         {

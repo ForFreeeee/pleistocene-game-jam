@@ -11,6 +11,7 @@ public class MossData : ScriptableObject
    public bool LikesRock;
    public bool LikesGround;
    public Vector3 finalGrowthSize;
+   public Vector3 GrowthSizeVariation;
 
     public string NameKey;
     public string ShortDescriptionKey;

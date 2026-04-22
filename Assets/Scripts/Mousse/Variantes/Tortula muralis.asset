@@ -16,10 +16,11 @@ MonoBehaviour:
   GrowthTime: 1
   DecayTime: 1
   LikesWater: 0
-  LikesSun: 0
+  LikesSun: 1
   LikesRock: 1
   LikesGround: 0
-  finalGrowthSize: {x: 1.5, y: 3, z: 1.5}
+  finalGrowthSize: {x: 1.2, y: 1.2, z: 1.2}
+  GrowthSizeVariation: {x: 0.2, y: 0.2, z: 0.2}
   NameKey: TortulaMuralisName
   ShortDescriptionKey: TortulaMuralis
   DetailedKey: TortulaMuralisDetailed
@@ -27,8 +28,8 @@ MonoBehaviour:
   spriteColor: {fileID: 21300000, guid: 5fb314fdb70e4a54abd172949c680e92, type: 3}
   parentMossPrefab: {fileID: 1286625888222039658, guid: 2bf52c8455f9ad94297014afd27ee300, type: 3}
   childMossPrefab: {fileID: 1286625888222039658, guid: e933ac5aa83708849a348d8d9cd31b7a, type: 3}
-  mossRadius: 0.2
-  mossRadiusShift: 0.15
+  mossRadius: 0.05
+  mossRadiusShift: 0.01
   mossAngleVariation: 15
   mossDensity: 30
   mossDensityVariation: 5

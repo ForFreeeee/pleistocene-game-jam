@@ -28,7 +28,7 @@ namespace GameDev.Moss.States
         {
             float t=1-(decayTimer/moss.MossData.DecayTime);
             decayTimer-=Time.deltaTime;
-            moss.transform.localScale=Vector3.Lerp(moss.transform.localScale, Vector3.zero, t);
+            moss.gameObject.transform.localScale=Vector3.Lerp(moss.gameObject.transform.localScale, Vector3.zero, t);
             if (decayTimer <= 0)
             {
                 GameObject.Destroy(moss.gameObject);

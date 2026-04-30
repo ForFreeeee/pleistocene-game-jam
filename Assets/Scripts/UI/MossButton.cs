@@ -20,15 +20,20 @@ public class MossButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     Action<int> changeHoverMoss;
 
-    public void Init(int id, Sprite sprite, Action changeSelectedMoss, Action<int> changeHoverMoss)
+    public void Init(int id, Sprite sprite, Action changeSelectedMoss, Action<int> changeHoverMoss, ToggleGroup toggleGroup)
     {
         this.id = id;
         this.image.sprite = sprite;
+        this.toggle.group = toggleGroup;
 
         //OnClick event
         this.toggle.onValueChanged.AddListener(delegate {
-            changeSelectedMoss();});
-
+            if (toggle.isOn)
+            {
+            changeSelectedMoss();
+                
+            }
+        });
         //Hover event
         this.changeHoverMoss = changeHoverMoss;
     }

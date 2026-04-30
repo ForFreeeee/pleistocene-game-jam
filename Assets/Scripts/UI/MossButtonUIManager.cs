@@ -45,7 +45,7 @@ public class MossButtonUIManager : MonoBehaviour
         foreach (var moss in listMoss)
         {
             var button = Instantiate(mossButtonPrefab, toggleGroup.transform);
-            button.Init(moss.id,moss.spriteColor, changeSelectedMoss, changeHoverMoss);
+            button.Init(moss.id,moss.spriteColor, changeSelectedMoss, changeHoverMoss, toggleGroup);
             button.UpdateLikeSunImage(DefaultSprite);
             button.UpdatePlaceToPlace(DefaultSprite);
             buttonList.Add(moss.id,button);
@@ -93,9 +93,14 @@ public class MossButtonUIManager : MonoBehaviour
 
     public int GetSelectedMooss()
     {
-        var toggle =  toggleGroup.ActiveToggles()?.FirstOrDefault();
-        var mossButton = toggle?.gameObject.GetComponent<MossButton>();
-        return mossButton?.id?? -1;
+        foreach (var kvp in buttonList)
+    {
+        if (kvp.Value.toggle.isOn)
+        {
+            return kvp.Key;
+        }
+    }
+    return -1;
     }
 
 }

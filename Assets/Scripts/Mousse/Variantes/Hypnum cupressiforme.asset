@@ -13,15 +13,23 @@ MonoBehaviour:
   m_Name: Hypnum cupressiforme
   m_EditorClassIdentifier: Assembly-CSharp::MossData
   id: 2
-  GrowthTime: 0
-  DecayTime: 0
+  GrowthTime: 1
+  DecayTime: 1
   LikesWater: 1
   LikesSun: 0
   LikesRock: 0
   LikesGround: 0
-  finalGrowthSize: {x: 1.5, y: 3, z: 1.5}
+  finalGrowthSize: {x: 2, y: 2, z: 2}
+  GrowthSizeVariation: {x: 0.2, y: 0.2, z: 0.2}
   NameKey: HypnumCupressiformeName
   ShortDescriptionKey: HypnumCupressiforme
   DetailedKey: HypnumCupressiformeDetailed
   spritePhoto: {fileID: 21300000, guid: 6ea852c0cfd91044289912d4c466a2f6, type: 3}
   spriteColor: {fileID: 21300000, guid: eb62fe408c40316459ff14bc2929eb0d, type: 3}
+  parentMossPrefab: {fileID: 1286625888222039658, guid: 4c55a08a3e77cf54d81939125354ded5, type: 3}
+  childMossPrefab: {fileID: 1286625888222039658, guid: 5f3ed8d107a476e4f8c16e33fa1fd88c, type: 3}
+  mossRadius: 0.1
+  mossRadiusShift: 0.05
+  mossAngleVariation: 5
+  mossDensity: 15
+  mossDensityVariation: 3

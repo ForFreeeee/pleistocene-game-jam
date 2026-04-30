@@ -19,9 +19,17 @@ MonoBehaviour:
   LikesSun: 1
   LikesRock: 0
   LikesGround: 0
-  finalGrowthSize: {x: 1.5, y: 3, z: 1.5}
+  finalGrowthSize: {x: 2, y: 2, z: 2}
+  GrowthSizeVariation: {x: 0.2, y: 0.2, z: 0.2}
   NameKey: AmblystegiumSerpensName
   ShortDescriptionKey: AmblystegiumSerpens
   DetailedKey: AmblystegiumSerpensDetailed
   spritePhoto: {fileID: 21300000, guid: 7ce75946f8e7a184fb662806d4d82a0c, type: 3}
   spriteColor: {fileID: 21300000, guid: 4946d14660a8f0549922a477ef12a6fd, type: 3}
+  parentMossPrefab: {fileID: 1286625888222039658, guid: 10696bfc83c59474dae9f5c4616c667f, type: 3}
+  childMossPrefab: {fileID: 1286625888222039658, guid: 5a7919c97cc878446ba7296607317a0a, type: 3}
+  mossRadius: 0.1
+  mossRadiusShift: 0.05
+  mossAngleVariation: 25
+  mossDensity: 75
+  mossDensityVariation: 5

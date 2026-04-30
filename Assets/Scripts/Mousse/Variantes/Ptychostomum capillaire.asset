@@ -13,15 +13,23 @@ MonoBehaviour:
   m_Name: Ptychostomum capillaire
   m_EditorClassIdentifier: Assembly-CSharp::MossData
   id: 3
-  GrowthTime: 0
-  DecayTime: 0
+  GrowthTime: 1
+  DecayTime: 1
   LikesWater: 0
   LikesSun: 0
   LikesRock: 0
   LikesGround: 1
-  finalGrowthSize: {x: 1.5, y: 3, z: 1.5}
+  finalGrowthSize: {x: 1.5, y: 2, z: 1.5}
+  GrowthSizeVariation: {x: 0.2, y: 0.2, z: 0.2}
   NameKey: PtychostomumCapillaireName
   ShortDescriptionKey: PtychostomumCapillaire
   DetailedKey: PtychostomumCapillaireDetailed
   spritePhoto: {fileID: 21300000, guid: bcbf7194e858a754fb9d1c48d6d85241, type: 3}
   spriteColor: {fileID: 21300000, guid: 527dc9ff98ae9a54dbb649f088011b72, type: 3}
+  parentMossPrefab: {fileID: 1286625888222039658, guid: b8ac6356fe3c072418891be25f3f4292, type: 3}
+  childMossPrefab: {fileID: 1286625888222039658, guid: acc6b0ce3d8137c42b97c476e857cf3d, type: 3}
+  mossRadius: 0.1
+  mossRadiusShift: 0.01
+  mossAngleVariation: 5
+  mossDensity: 10
+  mossDensityVariation: 2

@@ -5,6 +5,7 @@ using FMOD.Studio;
 using FMOD;
 using UnityEngine.InputSystem;
 using UnityEngine.SocialPlatforms;
+using System.Linq;
 
 public class MossShooter : MonoBehaviour
 {
@@ -41,6 +42,8 @@ public class MossShooter : MonoBehaviour
     EventReference m_mainTheme;
     [SerializeField]
     EventReference m_mossGrowing;
+    [SerializeField]
+    EventReference m_ambience;
 
     Dictionary<string, FMOD.Studio.EventInstance> eventInstances;
 
@@ -49,6 +52,10 @@ public class MossShooter : MonoBehaviour
     public void CreateEventInstance(string eventName, EventReference eventReference)
     {
         FMOD.Studio.EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
+        if(eventName=="MossGrowth")
+        {
+            eventInstance.set3DAttributes(RuntimeUtils.To3DAttributes(gameObject));
+        }
         eventInstances.Add(eventName, eventInstance);
     }
 
@@ -60,7 +67,7 @@ public class MossShooter : MonoBehaviour
         }
         else
         {
-            UnityEngine.Debug.LogWarning($"Event instance '{eventName}' not found.");
+            UnityEngine.Debug.LogWarning($"Emitter for '{eventName}' not found.");
         }
     }
 
@@ -70,13 +77,22 @@ public class MossShooter : MonoBehaviour
         {
             emitter.Stop();
         }
+        else
+        {
+            UnityEngine.Debug.LogWarning($"Emitter for '{eventName}' not found.");
+        }
     }
 
     public void SetParameter(string eventName, string parameterName, float value)
     {
         if (m_emitters.TryGetValue(eventName, out FMODUnity.StudioEventEmitter emitter))
         {
+            UnityEngine.Debug.Log($"Setting parameter '{parameterName}' to {value} on event '{eventName}'.");
             emitter.SetParameter(parameterName, value);
+        }
+        else
+        {
+            UnityEngine.Debug.LogWarning($"Emitter for '{eventName}' not found.");
         }
     }
 
@@ -93,15 +109,16 @@ public class MossShooter : MonoBehaviour
         EventDescription ed;
         for (int i = 0; i < emitters_array.Length; i++)
         {
-            //m_emitters.Add(emitters_array[i].EventReference.Path, emitters_array[i]);
+            m_emitters.Add(emitters_array[i].EventReference.Path, emitters_array[i]);
         }
 
 
-        //CreateEventInstance("MainTheme", m_mainTheme);
-        //PlayEventInstance("event:/MainTheme");
-        //CreateEventInstance("MossGrowth", m_mossGrowing);
-        //SetParameter("event:/MossGrowth", "CanGrow", 1);
-        //PlayEventInstance("event:/MossGrowth");
+        CreateEventInstance("MainTheme", m_mainTheme);
+        PlayEventInstance("event:/MainTheme");
+        CreateEventInstance("MossGrowth", m_mossGrowing);
+        PlayEventInstance("event:/MossGrowth");
+        CreateEventInstance("Ambience", m_ambience);
+        PlayEventInstance("event:/Ambience");
     }
 
     // Update is called once per frame
@@ -122,17 +139,13 @@ public class MossShooter : MonoBehaviour
                 //UnityEngine.Debug.Log("Hit: " + hit.collider.gameObject.name);
                 if (CanPlaceParentMoss(hit.collider.gameObject.tag) == false)
                 {
-                    //SetParameter("MossGrowth", "CanGrow", 0);
                     return;
                 }
                 
-                //SetParameter("MossGrowth", "CanGrow", 1);
+                SetParameter("event:/MossGrowth", "CanGrow", 1);
                 GenerateMoss(hit, hit.collider.gameObject);
-            } else
-            {
-                //SetParameter("MossGrowth", "CanGrow", 0);
-            }
-                m_currentDelay = m_setDelayValue;
+            } 
+            m_currentDelay = m_setDelayValue;
         }
     }
 
@@ -193,9 +206,7 @@ public class MossShooter : MonoBehaviour
             childMoss.transform.RotateAround(childMoss.transform.position, right, angleX);
             childMoss.transform.RotateAround(childMoss.transform.position, forward, angleZ);
             Vector3 localScaleBeforeParent = childMoss.transform.localScale;
-            UnityEngine.Debug.Log("0 " + localScaleBeforeParent);
             childMoss.transform.SetParent(parentMoss.transform, worldPositionStays: true);
-            UnityEngine.Debug.Log("1 " + childMoss.transform.localScale);
             childMoss.transform.localScale = localScaleBeforeParent;
         }  
     }

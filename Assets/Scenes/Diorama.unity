@@ -5307,7 +5307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5316769034508709804, guid: 3bbd7e0680df44b429bb871fd72c434a, type: 3}
       propertyPath: m_fontSize
-      value: 17.3
+      value: 17.2
       objectReference: {fileID: 0}
     - target: {fileID: 6348321780275734673, guid: 3bbd7e0680df44b429bb871fd72c434a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -5351,7 +5351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7405745136986962188, guid: 3bbd7e0680df44b429bb871fd72c434a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7600519863511767574, guid: 3bbd7e0680df44b429bb871fd72c434a, type: 3}
       propertyPath: m_text
@@ -5791,6 +5791,8 @@ GameObject:
   - component: {fileID: 833533341}
   - component: {fileID: 833533340}
   - component: {fileID: 833533344}
+  - component: {fileID: 833533345}
+  - component: {fileID: 833533346}
   m_Layer: 0
   m_Name: MossShooter
   m_TagString: Untagged
@@ -5962,6 +5964,13 @@ MonoBehaviour:
       Data3: -1313154151
       Data4: 1305114013
     Path: event:/MossGrowth
+  m_ambience:
+    Guid:
+      Data1: 1026856553
+      Data2: 1253959566
+      Data3: 800310204
+      Data4: -895895920
+    Path: event:/Ambience
 --- !u!4 &833533342
 Transform:
   m_ObjectHideFlags: 0
@@ -6009,6 +6018,70 @@ MonoBehaviour:
     Value: 1
   - Name: NbOfMosses
     Value: 6
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &833533345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833533339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1191494082
+      Data2: 1231230234
+      Data3: -1313154151
+      Data4: 1305114013
+    Path: event:/MossGrowth
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params:
+  - Name: CanGrow
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &833533346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833533339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1026856553
+      Data2: 1253959566
+      Data3: 800310204
+      Data4: -895895920
+    Path: event:/Ambience
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20

@@ -70,7 +70,8 @@ public class MossManageur : MonoBehaviour
         for (int i = 0; i < m_coveredSurface.Length; i++)
             average_coverage += m_coveredSurface[i];
         average_coverage = average_coverage / m_coveredSurface.Length;
-        mossShooter.SetParameter("MainTheme", "Completion", average_coverage/100.0f);
+        mossShooter.SetParameter("event:/MossGrowth", "CanGrow", 0);
+        mossShooter.SetParameter("event:/MainTheme", "Completion", average_coverage/100.0f);
         if (CheckWinCond())
         {
             LaunchEndGame();   
